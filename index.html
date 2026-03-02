@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fleshmoon / TYR-113 Mission Concept Generator</title>
+  <link rel="stylesheet" href="style.css?v=20260302a" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Fleshmoon / TYR-113 Mission Concept Generator</h1>
+      <p>Quick tactical horror mission seeds with deterministic generation support and sparse-canvas action area maps.</p>
+    </header>
+
+    <section class="controls card">
+      <div class="row">
+        <label for="seedInput">Seed</label>
+        <input id="seedInput" type="text" placeholder="Optional seed string" />
+        <button id="generateBtn">Generate Mission</button>
+        <button id="rerollAllBtn">Reroll All</button>
+      </div>
+      <div class="row">
+        <label class="checkbox"><input id="uniqueToggle" type="checkbox" /> Regenerate until unique in mission</label>
+        <button id="rerollNameBtn">Reroll Name Only</button>
+        <button id="copyBtn">Copy to Clipboard</button>
+        <button id="exportBtn">Save as JSON</button>
+      </div>
+      <div class="filters">
+        <span>Tag Filters:</span>
+        <label class="checkbox"><input type="checkbox" class="tag-filter" value="indoor" /> indoor</label>
+        <label class="checkbox"><input type="checkbox" class="tag-filter" value="outdoor" /> outdoor</label>
+        <label class="checkbox"><input type="checkbox" class="tag-filter" value="machine" /> machine</label>
+        <label class="checkbox"><input type="checkbox" class="tag-filter" value="cult" /> cult</label>
+        <label class="checkbox"><input type="checkbox" class="tag-filter" value="gifted" /> gifted</label>
+        <label class="checkbox"><input type="checkbox" class="tag-filter" value="stricken" /> stricken</label>
+        <label class="checkbox"><input type="checkbox" class="tag-filter" value="grotesque" /> grotesque</label>
+        <label class="checkbox"><input type="checkbox" class="tag-filter" value="darkling" /> darkling</label>
+        <label class="checkbox"><input type="checkbox" class="tag-filter" value="anomaly" /> anomaly</label>
+      </div>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section class="mission card">
+      <h2 id="missionHeadline" class="mission-headline">Operation Pending</h2>
+      <p id="missionMeta" class="mission-meta">Generate a mission to populate briefing details.</p>
+      <div id="missionOutput" class="mission-output"></div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="map card">
+      <h2>Action Area Map</h2>
+      <div class="map-controls">
+        <div class="row">
+          <label for="mapSizePreset">Canvas Size</label>
+          <select id="mapSizePreset">
+            <option value="7x9" selected>7x9 (Gameplay Cap)</option>
+          </select>
+          <label class="checkbox"><input id="mixedBiomesToggle" type="checkbox" checked /> Mixed Biomes</label>
+          <label class="checkbox"><input id="allowVariationToggle" type="checkbox" checked /> Allow Variation Tiles</label>
+        </div>
+        <div class="row">
+          <label for="areaBiasSlider">Area Size Bias</label>
+          <input id="areaBiasSlider" type="range" min="-100" max="100" step="1" value="0" />
+          <span id="areaBiasValue" class="value-chip">0</span>
+          <span class="hint">small - large</span>
+        </div>
+        <div class="row">
+          <button id="rerollMapBtn">Reroll Entire Map</button>
+          <button id="rerollAreaThemeBtn">Reroll Area Theme</button>
+          <button id="rerollAreaShapeBtn">Reroll Area Shape</button>
+        </div>
+      </div>
+      <p id="mapStatus" class="status map-status"></p>
+      <div id="mapGrid" class="map-grid"></div>
+      <div class="legend-wrap">
+        <h3>Area Legend</h3>
+        <div id="areaLegend" class="area-legend"></div>
+      </div>
+    </section>
+
+    <section class="history card">
+      <h2>History (last 20)</h2>
+      <div id="historyList" class="history-list"></div>
+    </section>
+  </main>
+
+  <template id="categoryTemplate">
+    <article class="category-item">
+      <div>
+        <h3 class="category-label"></h3>
+        <p class="category-value"></p>
+      </div>
+      <div class="category-actions">
+        <button class="reroll-category-btn">Reroll</button>
+        <label class="checkbox"><input type="checkbox" class="lock-category" /> Lock</label>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js?v=20260302a"></script>
+</body>
+</html>

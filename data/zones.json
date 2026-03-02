@@ -1,0 +1,395 @@
+{
+  "tiles": [
+    {
+      "id": "FloodedSewers",
+      "name": "Flooded Sewers",
+      "biome": "sewers",
+      "weight": 4,
+      "tags": ["indoor", "hazard", "sewer"],
+      "image": "ZoneCards/Sewers/FloodedSewers.png",
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["connector", "mid-fight", "hazard"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "InfestedTunnels",
+      "name": "Infested Tunnels",
+      "biome": "sewers",
+      "weight": 3,
+      "tags": ["indoor", "sewer", "spawn", "grotesque"],
+      "image": "ZoneCards/Sewers/InfestedTunnels.png",
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["connector", "mid-fight", "hazard"],
+      "intensityLevel": 3
+    },
+    {
+      "id": "SewerBarricades",
+      "name": "Sewer Barricades",
+      "biome": "sewers",
+      "weight": 3,
+      "tags": ["indoor", "sewer", "urban"],
+      "image": "ZoneCards/Sewers/SewerBarricades.png",
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["connector", "mid-fight", "defensive"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "FiltrationNode",
+      "name": "Filtration Node",
+      "biome": "sewers",
+      "weight": 2,
+      "tags": ["sewer", "machine", "objective"],
+      "image": "ZoneCards/Urban-Industrial/FiltrationNode.png",
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "defensive", "mid-fight"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "SpawningPools",
+      "name": "Spawning Pools",
+      "biome": "sewers",
+      "weight": 1,
+      "tags": ["sewer", "objective", "spawn", "grotesque", "anomaly"],
+      "image": "ZoneCards/Sewers/SpawningPools.png",
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "mid-fight", "hazard"],
+      "intensityLevel": 3
+    },
+    {
+      "id": "PumpControl",
+      "name": "Pump Control",
+      "biome": "sewers",
+      "weight": 2,
+      "tags": ["sewer", "machine", "objective"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "defensive"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "OverflowJunction",
+      "name": "Overflow Junction",
+      "biome": "sewers",
+      "weight": 2,
+      "tags": ["sewer", "hazard", "machine"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["connector", "hazard"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "DrainageCathedral",
+      "name": "Drainage Cathedral",
+      "biome": "sewers",
+      "weight": 1,
+      "tags": ["sewer", "cult", "ritual"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "mid-fight", "hazard"],
+      "intensityLevel": 3
+    },
+
+    {
+      "id": "FactoryFloor",
+      "name": "Factory Floor",
+      "biome": "industrial",
+      "weight": 4,
+      "tags": ["industrial", "machine", "indoor"],
+      "narrativePhaseBias": 1,
+      "functionalRoleHints": ["start-ok", "connector", "mid-fight"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "MaintenanceBay",
+      "name": "Maintenance Bay",
+      "biome": "industrial",
+      "weight": 3,
+      "tags": ["industrial", "machine", "indoor"],
+      "narrativePhaseBias": 1,
+      "functionalRoleHints": ["start-ok", "connector", "mid-fight"],
+      "intensityLevel": 1
+    },
+    {
+      "id": "ControlRoom",
+      "name": "Control Room",
+      "biome": "industrial",
+      "weight": 3,
+      "tags": ["industrial", "machine", "objective"],
+      "image": "ZoneCards/Urban-Industrial/ControlRoom.png",
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "defensive", "mid-fight"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "AssemblyLine",
+      "name": "Assembly Line",
+      "biome": "industrial",
+      "weight": 3,
+      "tags": ["industrial", "machine", "spawn"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["connector", "mid-fight", "hazard"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "CoolantChannels",
+      "name": "Coolant Channels",
+      "biome": "industrial",
+      "weight": 2,
+      "tags": ["industrial", "machine", "hazard"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["connector", "hazard"],
+      "intensityLevel": 3
+    },
+    {
+      "id": "ArcanoidFoundry",
+      "name": "Arcanoid Foundry",
+      "biome": "industrial",
+      "weight": 1,
+      "tags": ["industrial", "machine", "objective", "spawn"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "mid-fight", "hazard"],
+      "intensityLevel": 3
+    },
+    {
+      "id": "ScrapConcourse",
+      "name": "Scrap Concourse",
+      "biome": "industrial",
+      "weight": 2,
+      "tags": ["industrial", "hazard", "urban"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["connector", "mid-fight", "hazard"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "ReactorAccess",
+      "name": "Reactor Access",
+      "biome": "industrial",
+      "weight": 1,
+      "tags": ["industrial", "machine", "objective", "hazard"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "defensive", "hazard"],
+      "intensityLevel": 3
+    },
+
+    {
+      "id": "SubwayPlatform",
+      "name": "Subway Platform",
+      "biome": "transit",
+      "weight": 4,
+      "tags": ["transit", "urban", "indoor"],
+      "narrativePhaseBias": 1,
+      "functionalRoleHints": ["start-ok", "connector", "mid-fight"],
+      "intensityLevel": 1
+    },
+    {
+      "id": "ServiceTunnels",
+      "name": "Service Tunnels",
+      "biome": "transit",
+      "weight": 3,
+      "tags": ["transit", "indoor", "machine"],
+      "narrativePhaseBias": 1,
+      "functionalRoleHints": ["start-ok", "connector"],
+      "intensityLevel": 1
+    },
+    {
+      "id": "RailSwitchYard",
+      "name": "Rail Switch Yard",
+      "biome": "transit",
+      "weight": 2,
+      "tags": ["transit", "machine", "objective"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["connector", "objective", "mid-fight"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "MaglevDepot",
+      "name": "Maglev Depot",
+      "biome": "transit",
+      "weight": 2,
+      "tags": ["transit", "industrial", "machine"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["connector", "mid-fight"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "SignalTower",
+      "name": "Signal Tower",
+      "biome": "transit",
+      "weight": 2,
+      "tags": ["transit", "machine", "objective", "outdoor"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "defensive"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "TicketConcourse",
+      "name": "Ticket Concourse",
+      "biome": "transit",
+      "weight": 3,
+      "tags": ["transit", "urban", "indoor"],
+      "narrativePhaseBias": 1,
+      "functionalRoleHints": ["start-ok", "connector", "mid-fight"],
+      "intensityLevel": 1
+    },
+
+    {
+      "id": "ApartmentStacks",
+      "name": "Apartment Stacks",
+      "biome": "civic",
+      "weight": 4,
+      "tags": ["urban", "indoor"],
+      "narrativePhaseBias": 1,
+      "functionalRoleHints": ["start-ok", "mid-fight"],
+      "intensityLevel": 1
+    },
+    {
+      "id": "PublicSchoolWing",
+      "name": "Public School Wing",
+      "biome": "civic",
+      "weight": 3,
+      "tags": ["urban", "indoor"],
+      "narrativePhaseBias": 1,
+      "functionalRoleHints": ["start-ok", "connector"],
+      "intensityLevel": 1
+    },
+    {
+      "id": "ArchiveVault",
+      "name": "Archive Vault",
+      "biome": "civic",
+      "weight": 2,
+      "tags": ["urban", "machine", "objective", "indoor"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "defensive"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "HospitalWard",
+      "name": "Hospital Ward",
+      "biome": "civic",
+      "weight": 2,
+      "tags": ["urban", "stricken", "indoor"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["mid-fight", "hazard"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "CourthouseAnnex",
+      "name": "Courthouse Annex",
+      "biome": "civic",
+      "weight": 2,
+      "tags": ["urban", "cult", "indoor"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["defensive", "mid-fight"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "RefugeeMarket",
+      "name": "Refugee Market",
+      "biome": "civic",
+      "weight": 2,
+      "tags": ["urban", "spawn", "indoor"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["connector", "mid-fight", "hazard"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "EvacCheckpoint",
+      "name": "Evac Checkpoint",
+      "biome": "civic",
+      "weight": 2,
+      "tags": ["urban", "objective", "extraction", "outdoor"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "defensive", "start-ok"],
+      "intensityLevel": 2
+    },
+
+    {
+      "id": "BiolabCorridor",
+      "name": "Biolab Corridor",
+      "biome": "labs",
+      "weight": 3,
+      "tags": ["lab", "machine", "indoor"],
+      "narrativePhaseBias": 1,
+      "functionalRoleHints": ["start-ok", "connector"],
+      "intensityLevel": 1
+    },
+    {
+      "id": "QuarantineLab",
+      "name": "Quarantine Lab",
+      "biome": "labs",
+      "weight": 2,
+      "tags": ["lab", "stricken", "machine", "indoor"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["mid-fight", "hazard"],
+      "intensityLevel": 3
+    },
+    {
+      "id": "CryoStorage",
+      "name": "Cryo Storage",
+      "biome": "labs",
+      "weight": 2,
+      "tags": ["lab", "machine", "indoor"],
+      "narrativePhaseBias": 1,
+      "functionalRoleHints": ["connector", "mid-fight"],
+      "intensityLevel": 1
+    },
+    {
+      "id": "NodeServerVault",
+      "name": "Node Server Vault",
+      "biome": "labs",
+      "weight": 2,
+      "tags": ["lab", "machine", "objective", "indoor"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "defensive"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "ContainmentChamber",
+      "name": "Containment Chamber",
+      "biome": "labs",
+      "weight": 1,
+      "tags": ["lab", "anomaly", "objective", "indoor"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["objective", "hazard", "defensive"],
+      "intensityLevel": 3
+    },
+    {
+      "id": "SpecimenTheater",
+      "name": "Specimen Theater",
+      "biome": "labs",
+      "weight": 1,
+      "tags": ["lab", "grotesque", "spawn", "indoor"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["mid-fight", "hazard"],
+      "intensityLevel": 3
+    },
+
+    {
+      "id": "StormDrainPlaza",
+      "name": "Storm-Drain Plaza",
+      "biome": "outskirts",
+      "weight": 2,
+      "tags": ["outdoor", "urban", "hazard"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["connector", "mid-fight", "hazard"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "CargoDrydock",
+      "name": "Cargo Drydock",
+      "biome": "outskirts",
+      "weight": 2,
+      "tags": ["outdoor", "industrial", "machine"],
+      "narrativePhaseBias": 2,
+      "functionalRoleHints": ["start-ok", "connector", "mid-fight"],
+      "intensityLevel": 2
+    },
+    {
+      "id": "PerimeterGate",
+      "name": "Perimeter Gate",
+      "biome": "outskirts",
+      "weight": 2,
+      "tags": ["outdoor", "urban", "objective", "extraction", "machine"],
+      "narrativePhaseBias": 3,
+      "functionalRoleHints": ["connector", "objective", "defensive"],
+      "intensityLevel": 2
+    }
+  ]
+}

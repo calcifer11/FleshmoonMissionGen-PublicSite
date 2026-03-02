@@ -1,0 +1,5121 @@
+{
+  "locations": [
+    {
+      "text": "Collapsed worker apartments above a flooded transit trench.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Water treatment plant where intake filters pulse like lungs.",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "indoor",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Subway maintenance tunnels with dead trains welded in place.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Sealed agricultural dome lit by failing growth lamps.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "machine"
+      ]
+    },
+    {
+      "text": "Municipal archive vault beneath a cracked courthouse.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Rusting shipyard drydock where cranes still move at night.",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Biomedical lab annex quarantined behind welded blast doors.",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Abandoned public school repurposed as a cult shelter.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "cult",
+        "urban"
+      ]
+    },
+    {
+      "text": "Radio tower service complex above a storm-lashed ridge.",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "machine"
+      ]
+    },
+    {
+      "text": "Cargo mag-rail depot where manifests keep rewriting themselves.",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Hospital wing sealed after triage went feral.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "stricken",
+        "urban"
+      ]
+    },
+    {
+      "text": "Underground coolant station beneath the district reactor.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Funeral columbarium whose halls are mapped like a maze.",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Canal lock control house surrounded by black water bloom.",
+      "weight": 2,
+      "tags": [
+        "outdoor",
+        "industrial",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Prefab refugee blocks built inside a gutted shopping hub.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Signal intelligence bunker with mirrored corridor loops.",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Fuel storage farm where pressure alarms never stop.",
+      "weight": 3,
+      "tags": [
+        "outdoor",
+        "industrial",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Court-martial chamber converted into a detention pit.",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "cult"
+      ]
+    },
+    {
+      "text": "Orbital elevator staging hall now serving as a slum market.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Waste incineration corridor network beneath the old city.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "industrial",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Transit police precinct sealed with riot foam and prayer chalk.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "urban",
+        "cult"
+      ]
+    },
+    {
+      "text": "Cryogenic food warehouse where aisle lights sweep like search beams.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Storm-drain cathedral under the old financial quarter.",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "urban",
+        "ritual",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Atmospheric scrubber farm on the perimeter wall.",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "University physics annex with magnet coils still humming.",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Drone assembly garage beneath the freight loop.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Botanical conservatory overrun by black vine growth.",
+      "weight": 1,
+      "tags": [
+        "indoor",
+        "anomaly",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Civil defense siren bunker connected to school basements.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban",
+        "machine"
+      ]
+    },
+    {
+      "text": "Flooded subway platform converted into a refugee barter line.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "urban",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Stacked container maze in a moonlit port terminal.",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "industrial",
+        "urban"
+      ]
+    },
+    {
+      "text": "Data-center catacombs under a shuttered fintech tower.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Collapsed commuter bridge maintenance vault.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "industrial",
+        "urban"
+      ]
+    },
+    {
+      "text": "Observation chapel attached to a defunct hospice.",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "ritual",
+        "urban"
+      ]
+    },
+    {
+      "text": "Quarantine ferry terminal with chained boarding gates.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Heliport service ring around a silent trauma hospital.",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "urban",
+        "machine"
+      ]
+    },
+    {
+      "text": "Factory clean-room wing now packed with bone totems.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "industrial",
+        "cult"
+      ]
+    },
+    {
+      "text": "Municipal cold-storage vault where IDs are nailed to doors.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Monorail switching yard with looping signal ghosts.",
+      "weight": 2,
+      "tags": [
+        "outdoor",
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Emergency desal plant intake tunnels below the seawall.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "industrial",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Broadcast museum archive sealed after a mass trance event.",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "urban",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Collapsed courthouse parking decks turned into cult dorms.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "cult",
+        "urban"
+      ]
+    },
+    {
+      "text": "Orbital cargo customs hall with drifting anti-grav crates.",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "industrial",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Neighborhood crematorium annex running on backup generators.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "urban",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Deep well pumping station beneath a dry reservoir.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Military preschool shelter under a disused barracks block.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "urban",
+        "cult"
+      ]
+    },
+    {
+      "text": "Fiber relay trench network crossing the old riverbed.",
+      "weight": 3,
+      "tags": [
+        "outdoor",
+        "machine",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Research aquarium with shattered tanks and black tide seepage.",
+      "weight": 1,
+      "tags": [
+        "indoor",
+        "anomaly",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Maglev service spine inside the finance district.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban",
+        "machine"
+      ]
+    },
+    {
+      "text": "Collapsed grain silos converted into a ration market.",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "industrial",
+        "urban"
+      ]
+    },
+    {
+      "text": "Border checkpoint dome where scanners still flag the living.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "outdoor",
+        "machine",
+        "urban"
+      ]
+    }
+  ],
+  "corruptions": [
+    {
+      "text": "Grotesques nest in ventilation shafts and strike from blind angles.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "indoor"
+      ]
+    },
+    {
+      "text": "Stricken mobs surge in waves triggered by sound.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "urban"
+      ]
+    },
+    {
+      "text": "Darklings drift through shadow bands and extinguish weak lights.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Cultists run patrol liturgies backed by stolen military gear.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Arcanoids guard core machinery with copied human voices.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Mixed Stricken and Grotesques fight each other until prey appears.",
+      "weight": 3,
+      "tags": [
+        "stricken",
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Darkling scouts mark targets for a larger unseen pack.",
+      "weight": 2,
+      "tags": [
+        "darkling"
+      ]
+    },
+    {
+      "text": "Cultist engineers are grafting Arcanoids with ritual bonework.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "machine"
+      ]
+    },
+    {
+      "text": "An unknown anomaly manifests hostile duplicates of the team.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Grotesque breeders have converted storage rooms into hatch pits.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Stricken overseers retain tactical memory and coordinate flanks.",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Darklings phase through Gates unless flooded with hard light.",
+      "weight": 3,
+      "tags": [
+        "darkling",
+        "machine"
+      ]
+    },
+    {
+      "text": "Cult cells wear TYR-113 uniforms to pass as relief units.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "urban"
+      ]
+    },
+    {
+      "text": "Arcanoid maintenance swarms rebuild each other mid-combat.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Unknown fungal bloom converts corpses into signal beacons.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Grotesques are chained by cult handlers and released by bell tone.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "cult"
+      ]
+    },
+    {
+      "text": "Stricken medics inject improvised mutagens into fallen allies.",
+      "weight": 3,
+      "tags": [
+        "stricken",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Darklings merge into a single mass inside blackout zones.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Arcanoids obey an obsolete factory doctrine marked purge-friendly.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Anomaly static forces all factions to hallucinate phantom enemies.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Grotesque leapers wear scavenged armor plates and ignore pain.",
+      "weight": 2,
+      "tags": [
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Stricken pilgrims march in formation toward loudspeakers.",
+      "weight": 3,
+      "tags": [
+        "stricken",
+        "cult",
+        "urban"
+      ]
+    },
+    {
+      "text": "Darklings nest inside coolant mist and strike at warm targets.",
+      "weight": 3,
+      "tags": [
+        "darkling",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Cult morticians harvest marrow to power ritual batteries.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual",
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Arcanoid sentinels classify civilians as recyclable biomass.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Unknown spore clouds animate broken mannequins as decoys.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Grotesque tunnellers breach floors after any explosion.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Stricken wardens carry riot shields and drag captives away.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "urban"
+      ]
+    },
+    {
+      "text": "Darkling swarms ride power fluctuations from zone to zone.",
+      "weight": 3,
+      "tags": [
+        "darkling",
+        "machine"
+      ]
+    },
+    {
+      "text": "Cult choirs induce panic checks before melee rushes.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Arcanoid dockhands rebuild barricades for enemy factions.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Anomaly rain leaves reflective puddles that spawn hostile echoes.",
+      "weight": 1,
+      "tags": [
+        "anomaly",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Grotesque spitters mark targets for pack ambushes.",
+      "weight": 2,
+      "tags": [
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Stricken fire teams use stolen breaching charges.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Darklings mimic radio chatter to split squads.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Cult logisticians distribute mutagen ampoules to allies.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Arcanoids form mobile shield walls around core nodes.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Unknown parasite puppets corpses while the host hides nearby.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Grotesque handlers deploy chained hounds into chokepoints.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "cult"
+      ]
+    },
+    {
+      "text": "Stricken surgeons stitch fallen enemies back into action.",
+      "weight": 3,
+      "tags": [
+        "stricken",
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Darkling elders create moving blackout fields.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Cult snare teams prioritize Gifted bloodlines.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "gifted"
+      ]
+    },
+    {
+      "text": "Arcanoid repair priests chant maintenance liturgies over metal shrines.",
+      "weight": 1,
+      "tags": [
+        "machine",
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Anomaly static randomly swaps friend-or-foe markers.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Grotesque broodcarriers burst into lesser forms when killed.",
+      "weight": 2,
+      "tags": [
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Stricken chemists weaponize local water supplies.",
+      "weight": 3,
+      "tags": [
+        "stricken",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Darklings phase between mirrors and polished steel.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly",
+        "indoor"
+      ]
+    },
+    {
+      "text": "Cult enforcers wear shock collars linked to Arcanoid overseers.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "machine"
+      ]
+    },
+    {
+      "text": "Arcanoid swarms harvest spent ammo and fabricate spikes.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Unknown growth wraps Gates and births ambush tendrils.",
+      "weight": 1,
+      "tags": [
+        "anomaly",
+        "hazard"
+      ]
+    }
+  ],
+  "twists": [
+    {
+      "text": "Command orders are machine-forged; extraction was never authorized.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "A Gifted advisor embedded with the team is feeding both sides.",
+      "weight": 2,
+      "tags": [
+        "gifted"
+      ]
+    },
+    {
+      "text": "The survivor distress signal loops from a dead transmitter.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "The local node intelligence is compromised but still pleading for help.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Cultists are guarding civilians because a worse threat is below.",
+      "weight": 2,
+      "tags": [
+        "cult"
+      ]
+    },
+    {
+      "text": "The target artifact is a sealed Gifted child in cryostasis.",
+      "weight": 1,
+      "tags": [
+        "gifted",
+        "ritual"
+      ]
+    },
+    {
+      "text": "A trusted TYR-113 kill-code now triggers Arcanoid reinforcements.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Survivors are decoys grown by Darklings to lure rescue teams.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "The mission map omits an entire lower level under active ritual.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "A Gifted prisoner offers truth only if one operative is left behind.",
+      "weight": 2,
+      "tags": [
+        "gifted"
+      ]
+    },
+    {
+      "text": "The broadcasted quarantine breach was staged to clear evidence.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "The enemy commander is a former squadmate listed as KIA.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "stricken"
+      ]
+    },
+    {
+      "text": "The objective crate contains a living anomaly that mimics voices.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Power restoration awakens the very entity the team came to stop.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "The evac beacon is real but belongs to a cult extraction cell.",
+      "weight": 2,
+      "tags": [
+        "cult"
+      ]
+    },
+    {
+      "text": "A benign-looking archivist is the ritual anchor sustaining corruption.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Typhoon interference hides that the mission ended 12 hours ago.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "machine"
+      ]
+    },
+    {
+      "text": "The Gifted source of contamination is trying to cure it, not spread it.",
+      "weight": 1,
+      "tags": [
+        "gifted",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Security footage is predictive rather than recorded.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "The supposed safe zone is where corruption density is highest.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "The operation was commissioned by a cult front posing as city relief.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "urban"
+      ]
+    },
+    {
+      "text": "Your extraction pilot is a Darkling mimic in a human shell.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "The primary target is already dead; only its broadcast ghost remains.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "machine"
+      ]
+    },
+    {
+      "text": "A Gifted healer caused the outbreak while treating the first victims.",
+      "weight": 2,
+      "tags": [
+        "gifted",
+        "stricken"
+      ]
+    },
+    {
+      "text": "HQ is replaying yesterday's orders from a quarantined node.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Civilians in the holdout are voluntary cult initiates.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual",
+        "holdout"
+      ]
+    },
+    {
+      "text": "The reactor alarms are faked to hide a prisoner transfer.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Mission cameras are feeding your squad position to every faction.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "The Arcanoid core believes TYR-113 was dissolved years ago.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "A survivor child can command Grotesques by humming.",
+      "weight": 1,
+      "tags": [
+        "gifted",
+        "grotesque"
+      ]
+    },
+    {
+      "text": "The map safe corridor is baited with proxy mines.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "machine"
+      ]
+    },
+    {
+      "text": "The supposed traitor is inoculated and trying to stop command.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "machine"
+      ]
+    },
+    {
+      "text": "All distress calls originate from your own comms beacon.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "A cult chaplain carries valid TYR-113 command credentials.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "machine"
+      ]
+    },
+    {
+      "text": "The quarantine seal broke from inside the command bunker.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Darklings avoid one chamber because something worse is chained there.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "The Gifted asset is drawing corruption away from a nearby district.",
+      "weight": 1,
+      "tags": [
+        "gifted",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Your replacement squad was sent and never logged in.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "urban"
+      ]
+    },
+    {
+      "text": "Arcanoid fire-control marks the team as maintenance targets, not enemies.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "The objective sample is human memory encoded in flesh.",
+      "weight": 1,
+      "tags": [
+        "anomaly",
+        "grotesque"
+      ]
+    },
+    {
+      "text": "A captured cultist is actually the original facility director.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "urban"
+      ]
+    },
+    {
+      "text": "Power loss is intentional to protect a hidden evacuation route.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "The holdout zone is a ritual seal that fails if abandoned.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual",
+        "holdout"
+      ]
+    },
+    {
+      "text": "Command promised reinforcements that were reassigned to suppression duty.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "machine"
+      ]
+    },
+    {
+      "text": "The corruption source is in orbit and only mirrored on site.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "machine"
+      ]
+    },
+    {
+      "text": "One of the marked civilians is a dormant Arcanoid control key.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "False bioscan signatures hide an intact Stricken command cell.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "machine"
+      ]
+    },
+    {
+      "text": "The distress transmitter is tied to a bomb dead-man switch.",
+      "weight": 3,
+      "tags": [
+        "timer",
+        "hazard"
+      ]
+    },
+    {
+      "text": "A Gifted negotiator will stand down enemies for a blood price.",
+      "weight": 1,
+      "tags": [
+        "gifted",
+        "cult"
+      ]
+    },
+    {
+      "text": "The facility AI replaced all timestamps with fabricated future dates.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    }
+  ],
+  "escalations": [
+    {
+      "text": "A 9-round reactor purge countdown starts when the core door opens.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "Rot spreads one zone per round from all hazard tiles.",
+      "weight": 3,
+      "tags": [
+        "timer",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Reinforcements enter from the farthest Gate every other round.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Emergency lighting fails in phases, reducing line of sight each round.",
+      "weight": 3,
+      "tags": [
+        "darkling",
+        "machine"
+      ]
+    },
+    {
+      "text": "Security doors lock behind the team after each objective step.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "Toxic floodwater rises and turns low zones into hazard terrain.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "timer"
+      ]
+    },
+    {
+      "text": "Ritual phase markers trigger stronger enemies at rounds 3, 6, and 9.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual",
+        "timer"
+      ]
+    },
+    {
+      "text": "Extraction is denied until two remote relays are manually reset.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Arcanoid drones begin sealing exits with weld foam after first contact.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Distress sirens attract Stricken packs to all noisy zones.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "timer"
+      ]
+    },
+    {
+      "text": "Darkness storms pulse every round and teleport Darklings between Gates.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "A kill-sat pass in 8 rounds will sterilize the whole district.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "Cult bell tolls spawn fanatics unless shrines are disabled.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Communications collapse in 5 rounds; objective markers become hidden.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "Unstable coolant vents ignite random zones each turn.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Grotesque broodmother awakens when any operative is downed.",
+      "weight": 2,
+      "tags": [
+        "grotesque"
+      ]
+    },
+    {
+      "text": "False evacuation alerts force civilians to clog Gate chokepoints.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "timer"
+      ]
+    },
+    {
+      "text": "Containment shutters cycle every round, changing available routes.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Unknown anomaly rewinds one cleared zone back to hostile each round.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "timer"
+      ]
+    },
+    {
+      "text": "A storm surge will drown the site in 10 rounds unless pumps restart.",
+      "weight": 3,
+      "tags": [
+        "timer",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Every third round, all open Gates spawn one elite unit.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Backup generators fail sequentially, shrinking powered zones.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "Corruption fog advances from outer edges by one zone each round.",
+      "weight": 2,
+      "tags": [
+        "timer",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Cult ward drums grant enemies bonus movement after round 4.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual",
+        "timer"
+      ]
+    },
+    {
+      "text": "Arcanoid turrets wake in any zone where gunfire occurred.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Civilians panic-stampede through nearest chokepoint at midpoint.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "timer"
+      ]
+    },
+    {
+      "text": "A heat spike will ignite fuel lines in 7 rounds.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "industrial",
+        "timer"
+      ]
+    },
+    {
+      "text": "Darkling eclipse cycle halves visibility on odd rounds.",
+      "weight": 2,
+      "tags": [
+        "darkling",
+        "timer"
+      ]
+    },
+    {
+      "text": "Reactor coolant leaks create new hazard tiles every turn.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "industrial",
+        "timer"
+      ]
+    },
+    {
+      "text": "Enemy command uplink upgrades reinforcements after round 5.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Ritual circles expand one ring per round unless disrupted.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual",
+        "timer"
+      ]
+    },
+    {
+      "text": "Extraction coordinates drift each round due to signal jam.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Floodgates cycle open and closed, redrawing movement lanes.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "Stricken frenzy triggers double activations after first boss death.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "timer"
+      ]
+    },
+    {
+      "text": "Arcanoid purge protocol locks one random door each turn.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Anomaly surge teleports objective crates to random zones.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "timer"
+      ]
+    },
+    {
+      "text": "Siren towers call additional hostiles until all are disabled.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "urban"
+      ]
+    },
+    {
+      "text": "Tremors collapse one traversable edge connection every two rounds.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "timer"
+      ]
+    },
+    {
+      "text": "Power conduits arc and deal damage in lit zones.",
+      "weight": 3,
+      "tags": [
+        "machine",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Cult signal beacon marks one operative for focused attacks each round.",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "timer"
+      ]
+    },
+    {
+      "text": "Grotesque pheromone cloud attracts packs to wounded operatives.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "timer"
+      ]
+    },
+    {
+      "text": "Orbiting debris causes periodic comms blackouts and HUD loss.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Seal failure vents hallucinogenic gas into interior zones.",
+      "weight": 1,
+      "tags": [
+        "hazard",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Automated shutters force alternating clockwise movement only.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "A mercy window closes in 6 rounds, after which no civilians can be saved.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "urban"
+      ]
+    },
+    {
+      "text": "Darkling nests hatch additional swarms when lights are restored.",
+      "weight": 3,
+      "tags": [
+        "darkling",
+        "machine"
+      ]
+    },
+    {
+      "text": "Unknown spores harden into barricades at round end.",
+      "weight": 1,
+      "tags": [
+        "anomaly",
+        "hazard"
+      ]
+    },
+    {
+      "text": "The ritual moon phase empowers cult elites at rounds 2, 5, and 8.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual",
+        "timer"
+      ]
+    },
+    {
+      "text": "Emergency channels collapse; objective hints stop updating after round 4.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "A remote artillery lock computes strike pattern that lands in 9 rounds.",
+      "weight": 3,
+      "tags": [
+        "timer",
+        "machine",
+        "hazard"
+      ]
+    }
+  ],
+  "primaryObjectives": [
+    {
+      "text": "Recover the blackbox from the command terminal and transmit proof.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Escort three civilians from scattered zones to the holdout zone.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Destroy the ritual anchor before the third liturgy cycle.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Secure the reactor control room and stabilize core pressure.",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Capture a live Arcanoid unit for forensic extraction.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Extract a Gifted witness from the quarantine wing alive.",
+      "weight": 2,
+      "tags": [
+        "gifted"
+      ]
+    },
+    {
+      "text": "Burn all brood pits marked on the lower-level map.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Reactivate two relay towers to re-open orbital comms.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Seal the anomaly rift with calibrated node charges.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Retrieve the antidote canister from the contaminated pharmacy.",
+      "weight": 3,
+      "tags": [
+        "stricken",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Hold the control bridge for six rounds against incoming waves.",
+      "weight": 3,
+      "tags": [
+        "timer",
+        "holdout"
+      ]
+    },
+    {
+      "text": "Disrupt the cult broadcast by destroying three signal altars.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "machine"
+      ]
+    },
+    {
+      "text": "Rescue the trapped maintenance crew in the locked tunnel sector.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Recover TYR-113 encryption keys from the archive vault.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Neutralize the Stricken overseer directing the horde.",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Deliver fusion cells to the evacuation tram and launch it.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Map and clear a safe route across all Gate-linked zones.",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "Disable the auto-defense grid without triggering full lockdown.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Secure contaminated evidence crates before cult recovery teams arrive.",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "timer"
+      ]
+    },
+    {
+      "text": "Extract with at least one intact sample of unknown biomass.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Upload clean firmware to the compromised security backbone.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Escort a reactor technician to three stabilization valves.",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Destroy the broodmother cocoon before it hatches.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "timer"
+      ]
+    },
+    {
+      "text": "Extract the district registrar alive from cult custody.",
+      "weight": 3,
+      "tags": [
+        "urban",
+        "cult"
+      ]
+    },
+    {
+      "text": "Shut down the anomaly beacon on the rooftop array.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "machine",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Recover evidence of command falsification from sealed archives.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Purge all ritual pylons anchoring the corruption field.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Restore tram power and evacuate survivors through Gate C.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Capture the Darkling alpha entity for containment.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Secure antidote production by holding the biolab mixers.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "machine"
+      ]
+    },
+    {
+      "text": "Reclaim and fortify the holdout zone for eight rounds.",
+      "weight": 3,
+      "tags": [
+        "holdout",
+        "timer"
+      ]
+    },
+    {
+      "text": "Disable Arcanoid command uplink in the central control room.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Retrieve the Gifted cipher from the submerged chapel vault.",
+      "weight": 1,
+      "tags": [
+        "gifted",
+        "ritual",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Clear and hold two extraction lanes simultaneously.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "urban"
+      ]
+    },
+    {
+      "text": "Destroy contaminated water pumps feeding the lower sectors.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Recover black-market vaccines before cult incineration teams arrive.",
+      "weight": 3,
+      "tags": [
+        "stricken",
+        "cult",
+        "timer"
+      ]
+    },
+    {
+      "text": "Install jammers on three hostile relay towers.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Locate and terminate the Stricken command medic.",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Escort the final school shelter bus to the perimeter gate.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "timer"
+      ]
+    },
+    {
+      "text": "Contain the mirror anomaly by placing four anchor stakes.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Evacuate the court records proving the quarantine cover-up.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "machine"
+      ]
+    },
+    {
+      "text": "Rescue the embedded TYR-113 observer from a locked panic room.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "indoor"
+      ]
+    },
+    {
+      "text": "Seize fuel reserves and ignite denial charges on withdrawal.",
+      "weight": 3,
+      "tags": [
+        "industrial",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Trace and cut the cult underground supply tunnel.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Recover the orbital uplink dish core for reverse engineering.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Neutralize all Arcanoid repair nests in the maintenance tier.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Deliver a live sample to extraction without using fire damage.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Defend the comms mast while HQ transmits a citywide counter-signal.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "holdout",
+        "timer"
+      ]
+    },
+    {
+      "text": "Break open the quarantine ring and escort medical teams inside.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "urban"
+      ]
+    },
+    {
+      "text": "Secure the anomaly lens and bring it back intact.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    }
+  ],
+  "secondaryObjectives": [
+    {
+      "text": "Keep power above 50 percent by holding auxiliary breakers.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Recover fallen squad tags from at least two red zones.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Silence all alarm nodes before extraction.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Prevent any civilian casualties during the operation.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Interrogate a captured cultist before round 6.",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "timer"
+      ]
+    },
+    {
+      "text": "Purge every hazard tile in the control room sector.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Collect three anomaly readings from unstable zones.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Escort a wounded engineer who moves one zone per round.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Do not let Darklings extinguish the central floodlight.",
+      "weight": 2,
+      "tags": [
+        "darkling"
+      ]
+    },
+    {
+      "text": "Hack the sealed data locker in the side wing.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Destroy all cult shrines found on map edge zones.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Extract one live Stricken specimen for medical review.",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Keep every Gate route open by removing barricade tokens.",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "Avoid triggering any auto-turret in secured sectors.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Complete mission without using incendiary munitions.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Find and secure the missing logistics manifest.",
+      "weight": 3,
+      "tags": [
+        "industrial"
+      ]
+    },
+    {
+      "text": "Protect a Gifted asset from direct damage.",
+      "weight": 2,
+      "tags": [
+        "gifted"
+      ]
+    },
+    {
+      "text": "Search every storage zone for hidden med caches.",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "Maintain radio contact with HQ at each timer checkpoint.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Tag at least four enemy bodies for retrieval.",
+      "weight": 3,
+      "tags": [
+        "grotesque",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Keep at least one generator active until extraction.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Recover two encrypted data slates from side sectors.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Prevent enemy use of rooftop sniper perches.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Tag every cult banner for intel analysis.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Do not allow any Arcanoid to escape off-map.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Stabilize three wounded civilians with field medkits.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Clear all hazard tiles from the primary route.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Hold the archive vestibule for two consecutive rounds.",
+      "weight": 3,
+      "tags": [
+        "holdout",
+        "indoor"
+      ]
+    },
+    {
+      "text": "Keep squad stress below panic threshold throughout mission.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Disable at least one spawn Gate with demolition charges.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Secure one intact Darkling specimen vial.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Recover lost drone parts for post-mission repair credits.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Complete mission with no downed operatives.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Unlock and loot the sealed armory cache.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Destroy all anomaly mirrors in interior zones.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Rescue trapped maintenance bots for goodwill with locals.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Avoid collateral damage in marked civilian blocks.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Identify the fake distress beacon before round 5.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Keep ritual chant volume below escalation threshold.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Carry a contaminated crate to extraction without dropping it.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Recover the old city map from the collapsed survey office.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "indoor"
+      ]
+    },
+    {
+      "text": "Purge one brood tunnel with controlled charges.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Intercept cult courier before it reaches map edge.",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "timer"
+      ]
+    },
+    {
+      "text": "Patch the comms repeater to restore long-range support.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Maintain visual contact with the Gifted asset each round.",
+      "weight": 2,
+      "tags": [
+        "gifted",
+        "timer"
+      ]
+    },
+    {
+      "text": "Close every blast shutter after passing through.",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Spend no command points in the first three rounds.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Search two optional zones for ration pallets.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Mark unstable flooring to prevent future civilian casualties.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Retrieve one personal item from each named casualty.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "stricken"
+      ]
+    }
+  ],
+  "enemyMixHints": [
+    {
+      "text": "Frontline Stricken with Darklings flanking through blackout zones.",
+      "weight": 3,
+      "tags": [
+        "stricken",
+        "darkling"
+      ]
+    },
+    {
+      "text": "Cultist rifle pairs screened by cheap Grotesque chargers.",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Arcanoid sentries hold chokepoints while Stricken swarm behind.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Mostly Darklings until ritual phase, then elite Cultists arrive.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Grotesque ambushers dominate vents with one hulking broodguard.",
+      "weight": 2,
+      "tags": [
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Anomaly echoes spawn decoy enemies before real contacts appear.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Heavy Arcanoids in control rooms, light drones on approach lanes.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Stricken rushers backed by bile-spitting support variants.",
+      "weight": 3,
+      "tags": [
+        "stricken",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Cult melee fanatics escorted by one Gifted defector.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "gifted"
+      ]
+    },
+    {
+      "text": "Darklings and Arcanoids cooperate under unknown command logic.",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Grotesque packs share space with dormant Arcanoids that wake on noise.",
+      "weight": 3,
+      "tags": [
+        "grotesque",
+        "machine"
+      ]
+    },
+    {
+      "text": "Low enemy count early, then surge from map edge Gates.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Cult snipers hold long lanes while Stricken pin in close quarters.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Arcanoid med-units revive downed hostiles if not destroyed first.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Darklings ignore civilians and prioritize powered machinery.",
+      "weight": 3,
+      "tags": [
+        "darkling",
+        "machine"
+      ]
+    },
+    {
+      "text": "Anomaly-spawned mirrors copy whichever enemy was last slain.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Grotesque tunnelers pop up behind the team after each objective step.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "timer"
+      ]
+    },
+    {
+      "text": "Stricken command cadre uses shields and coordinated suppressive fire.",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Cult engineers deploy improvised mines around ritual nodes.",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Arcanoid harvesters attempt to drag corpses off-map.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Stricken vanguard with Arcanoid overwatch from elevated lanes.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "machine"
+      ]
+    },
+    {
+      "text": "Cult shield bearers fronting Darkling skirmishers.",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "darkling"
+      ]
+    },
+    {
+      "text": "Grotesque bruisers backed by anomaly decoy swarms.",
+      "weight": 1,
+      "tags": [
+        "grotesque",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Arcanoid breachers pair with cult spotters and trap teams.",
+      "weight": 3,
+      "tags": [
+        "machine",
+        "cult"
+      ]
+    },
+    {
+      "text": "Darklings dominate early turns, then Stricken heavies arrive.",
+      "weight": 3,
+      "tags": [
+        "darkling",
+        "stricken",
+        "timer"
+      ]
+    },
+    {
+      "text": "Mostly cult rifles until ritual phase unlocks elite fanatics.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual",
+        "timer"
+      ]
+    },
+    {
+      "text": "Grotesque burrowers appear behind loud weapons.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "timer"
+      ]
+    },
+    {
+      "text": "Arcanoid scouts kite while repair units resurrect them.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Stricken shock troops with one commander granting extra actions.",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Darkling stalkers travel through vents and ceiling lines.",
+      "weight": 2,
+      "tags": [
+        "darkling",
+        "indoor"
+      ]
+    },
+    {
+      "text": "Cult sappers seed chokepoints with mines before engaging.",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Anomaly phantoms mirror the highest-damage enemy type.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Grotesque spitters deny cover while chargers force movement.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Arcanoid snipers pin open lanes as drones flank.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Stricken berserkers rush objectives while ranged units guard exits.",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "timer"
+      ]
+    },
+    {
+      "text": "Cult zealots protect Arcanoid cores at all costs.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "machine"
+      ]
+    },
+    {
+      "text": "Darkling packs scatter under light then regroup at blackout edges.",
+      "weight": 3,
+      "tags": [
+        "darkling",
+        "machine"
+      ]
+    },
+    {
+      "text": "Mixed low-tier hostiles until a single elite hunter is revealed.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "timer"
+      ]
+    },
+    {
+      "text": "Grotesque handlers coordinate with cult horn signals.",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "cult"
+      ]
+    },
+    {
+      "text": "Arcanoid suppressors prioritize whoever carries mission items.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Stricken medics revive melee units in the backline.",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Cult infiltrators disguise as civilians until alarm trigger.",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "urban"
+      ]
+    },
+    {
+      "text": "Darkling sentries ignore armor and chase isolated targets.",
+      "weight": 2,
+      "tags": [
+        "darkling"
+      ]
+    },
+    {
+      "text": "Anomaly entities copy squad movement patterns.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Grotesque hounds screen a slow-moving brood titan.",
+      "weight": 2,
+      "tags": [
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Arcanoid riot teams advance in paired shield formations.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Stricken gunline collapses into melee when commander falls.",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Cult flamers force displacement into Darkling ambush corridors.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "darkling",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Anomaly spores spawn weak adds from every corpse.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Machine cultists field hybrid Arcanoid exo-suits.",
+      "weight": 3,
+      "tags": [
+        "machine",
+        "cult",
+        "industrial"
+      ]
+    }
+  ],
+  "mapNotes": [
+    {
+      "text": "Two central Gates form a lethal chokepoint with blocked line of sight.",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "Control room overlooks three zones but doors can only open from inside.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Holdout zone has hard cover but only one narrow exit Gate.",
+      "weight": 3,
+      "tags": [
+        "holdout"
+      ]
+    },
+    {
+      "text": "North route is shorter but filled with hazard tiles and dead ends.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "South route loops wider with multiple flank paths and soft cover.",
+      "weight": 3,
+      "tags": [
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Collapsed corridor blocks direct LoS across the midline until cleared.",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "Service ladders allow vertical bypass between outer and inner rings.",
+      "weight": 3,
+      "tags": [
+        "industrial"
+      ]
+    },
+    {
+      "text": "Ritual chamber is a dead-end zone with two spawn Gates.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Power relay zones can be captured to disable nearby security doors.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Waterlogged sector slows movement unless pumps are activated.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Outer catwalk grants long LoS but has no hard cover.",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Cargo lifts link two distant zones but reset every other round.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Gate shutters create alternating open and blocked lanes.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "Debris fields provide cover and conceal hidden Grotesque burrows.",
+      "weight": 2,
+      "tags": [
+        "grotesque"
+      ]
+    },
+    {
+      "text": "A maintenance crawlspace bypasses the main chokepoint for small units.",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "Central atrium has clear sightlines but spawns from all four edges.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Control consoles in side rooms can lock or unlock adjacent Gates.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Extraction pad is exposed and requires two-turn stabilization.",
+      "weight": 3,
+      "tags": [
+        "timer",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Vent passages allow Darklings to ignore blocked Gate rules.",
+      "weight": 2,
+      "tags": [
+        "darkling"
+      ]
+    },
+    {
+      "text": "Hazard steam bursts trigger in predictable 3-round cycles.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "timer"
+      ]
+    },
+    {
+      "text": "Primary objective sits in a central zone with three entering Gates.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "timer"
+      ]
+    },
+    {
+      "text": "Service corridor provides stealth route but blocks heavy units.",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "Outer ring offers speed with zero hard cover.",
+      "weight": 3,
+      "tags": [
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Inner ring has dense cover and frequent spawn nodes.",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "Control booth can reroute power to open one sealed lane.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Collapsed stairwell creates one-way movement into the lower tier.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "indoor"
+      ]
+    },
+    {
+      "text": "Flood channels split the map unless bridge switches are held.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Rooftop path bypasses chokepoints but exposes long sightlines.",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Ritual dais counts as difficult terrain and amplifies cult spawns.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Broken tram cars form movable cover if pushed.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Two side loops reconnect near extraction for late flanks.",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "Central generator room emits hazard pulses every third round.",
+      "weight": 3,
+      "tags": [
+        "machine",
+        "hazard",
+        "timer"
+      ]
+    },
+    {
+      "text": "Sewer bypass links opposite corners through narrow crawl zones.",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Gate A and Gate D share a linked lock console.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Dead reactor hall grants hard cover but constant chip damage.",
+      "weight": 3,
+      "tags": [
+        "industrial",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Archive stacks create high cover and blind corner fights.",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Vent lanes connect rear objectives for Darkling movement.",
+      "weight": 2,
+      "tags": [
+        "darkling"
+      ]
+    },
+    {
+      "text": "Extraction zone starts inactive until two switches are held.",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "Debris slope blocks return movement once descended.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Observation deck grants perfect line of sight to midline.",
+      "weight": 3,
+      "tags": [
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Holdout zone has medical station but no nearby escape route.",
+      "weight": 3,
+      "tags": [
+        "holdout"
+      ]
+    },
+    {
+      "text": "Cargo crane can reposition one crate token per round.",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Map edge fog conceals approaching reinforcements for one round.",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "timer"
+      ]
+    },
+    {
+      "text": "Cult shrine rooms are optional but shorten reinforcement path if ignored.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Maintenance office contains lock override for all shutters.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Water turbine chamber rotates safe tiles each round.",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "timer",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Narrow tunnel network favors melee and limits grenade arcs.",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "Skybridge crossing can be destroyed to cut enemy pursuit.",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Objective vault door needs simultaneous interaction from two zones.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Sublevel prison cells hide civilians, loot, or ambushes.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "indoor"
+      ]
+    }
+  ],
+  "rewardsConsequences": [
+    {
+      "text": "Success grants one prototype weapon mod; failure triggers district lockdown.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Save the civilians to gain faction support; lose them and morale collapses.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "If the ritual anchor falls, corruption growth pauses for one campaign turn.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Recovering the blackbox unlocks an intel reroll in the next mission.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Arcanoid capture grants tech salvage but increases machine hostility later.",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Extract the Gifted alive for bonus resources, but cult pursuit intensifies.",
+      "weight": 1,
+      "tags": [
+        "gifted",
+        "cult"
+      ]
+    },
+    {
+      "text": "Destroy all brood pits to reduce Grotesque spawns next operation.",
+      "weight": 2,
+      "tags": [
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Failing containment adds persistent hazard tiles to the regional map.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Completing under timer grants command trust and one extra supply draw.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Missing extraction window forces a costly emergency pickup.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Securing encryption keys reveals hidden routes in a future map.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "If a relay stays active, Darkling presence spreads to adjacent sectors.",
+      "weight": 2,
+      "tags": [
+        "darkling"
+      ]
+    },
+    {
+      "text": "Preserving facility power provides free gear repair between missions.",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Collateral damage above threshold turns locals hostile.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Documented anomaly samples unlock experimental countermeasure cards.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Losing the witness erases one active lead from campaign logs.",
+      "weight": 2,
+      "tags": [
+        "gifted"
+      ]
+    },
+    {
+      "text": "Purging all shrines reduces cult reinforcement rolls next mission.",
+      "weight": 2,
+      "tags": [
+        "cult"
+      ]
+    },
+    {
+      "text": "If the reactor scrams, regional power shortages raise future timers.",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "timer"
+      ]
+    },
+    {
+      "text": "Recovering medical caches grants one free revive kit.",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Leaving evidence behind allows command to deny the incident publicly.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "If uplink is restored, future missions start with one free scout ping.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Failing civilian escort adds unrest penalties in urban districts.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Destroying the beacon reduces anomaly events for one cycle.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Leaving ritual pylons intact increases cult threat rating.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Recovering clean water grants bonus medical supplies.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Arcanoid core salvage unlocks one temporary drone ally.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Missing the timer causes command to reduce deployment budget.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Rescuing the registrar reveals black-market route choices next mission.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "If holdout survives, gain one extra reinforcement token.",
+      "weight": 3,
+      "tags": [
+        "holdout"
+      ]
+    },
+    {
+      "text": "Failure to contain spores adds persistent hazard markers to adjacent maps.",
+      "weight": 1,
+      "tags": [
+        "hazard",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Capturing a Darkling specimen enables anti-shadow munitions.",
+      "weight": 2,
+      "tags": [
+        "darkling"
+      ]
+    },
+    {
+      "text": "Collateral fires reduce local support and increase prices.",
+      "weight": 3,
+      "tags": [
+        "urban",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Securing archive proof grants a free objective reroll next operation.",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "machine"
+      ]
+    },
+    {
+      "text": "If the reactor is stabilized, future industrial maps lose one escalation step.",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Losing the Gifted asset closes one diplomacy branch.",
+      "weight": 2,
+      "tags": [
+        "gifted"
+      ]
+    },
+    {
+      "text": "Destroying brood nests lowers Grotesque boss chance next mission.",
+      "weight": 2,
+      "tags": [
+        "grotesque"
+      ]
+    },
+    {
+      "text": "If any cult courier escapes, enemy intel improves against your squad.",
+      "weight": 2,
+      "tags": [
+        "cult"
+      ]
+    },
+    {
+      "text": "Completing all secondaries grants one veteran perk pick.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Failing to tag evidence lets command rewrite the incident report.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Saving maintenance bots unlocks discounted gear repairs.",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "If extraction is delayed, one random operative starts next mission fatigued.",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "Recovering signal hardware grants improved comms range campaign-wide.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Allowing quarantine breach spreads Stricken encounters to nearby sectors.",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Purging mirror nodes reduces anomaly duplication effects.",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Securing ration stores grants one free supply cache in the next map.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "If the chapel falls, cult morale shatters and recruitment drops.",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Failing to evacuate records removes one future lore objective.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Collecting all data slates unlocks prototype tactical cards.",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Ignoring flooded pumps causes recurring movement penalties in canal zones.",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Successful silent run grants bonus reputation with resistance cells.",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    }
+  ],
+  "operationCodenamePrefixes": [
+    {
+      "text": "Iron",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Black",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Silent",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Rusted",
+      "weight": 3,
+      "tags": [
+        "industrial",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Pale",
+      "weight": 2,
+      "tags": [
+        "stricken",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Hollow",
+      "weight": 1,
+      "tags": [
+        "anomaly",
+        "cult"
+      ]
+    },
+    {
+      "text": "Crimson",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "cult"
+      ]
+    },
+    {
+      "text": "Severed",
+      "weight": 3,
+      "tags": [
+        "grotesque",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Null",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Ashen",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "urban"
+      ]
+    },
+    {
+      "text": "Grim",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "Velvet",
+      "weight": 2,
+      "tags": [
+        "darkling"
+      ]
+    },
+    {
+      "text": "Static",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Broken",
+      "weight": 3,
+      "tags": [
+        "machine",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Obsidian",
+      "weight": 1,
+      "tags": [
+        "anomaly",
+        "cult"
+      ]
+    },
+    {
+      "text": "Lurid",
+      "weight": 1,
+      "tags": [
+        "grotesque",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Cold",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Last",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "urban"
+      ]
+    },
+    {
+      "text": "Glass",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "machine"
+      ]
+    },
+    {
+      "text": "Sable",
+      "weight": 2,
+      "tags": [
+        "darkling",
+        "cult"
+      ]
+    },
+    {
+      "text": "Aegis",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Brass",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Cinder",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "urban"
+      ]
+    },
+    {
+      "text": "Drift",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Ebon",
+      "weight": 2,
+      "tags": [
+        "darkling",
+        "cult"
+      ]
+    },
+    {
+      "text": "Frost",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "machine"
+      ]
+    },
+    {
+      "text": "Ghost",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "urban"
+      ]
+    },
+    {
+      "text": "Harrow",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Ivory",
+      "weight": 2,
+      "tags": [
+        "urban",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Javelin",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "Knell",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Lumen",
+      "weight": 3,
+      "tags": [
+        "machine",
+        "darkling"
+      ]
+    },
+    {
+      "text": "Morrow",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "urban"
+      ]
+    },
+    {
+      "text": "Nexus",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Onyx",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Pylon",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Quarry",
+      "weight": 3,
+      "tags": [
+        "industrial",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Riven",
+      "weight": 1,
+      "tags": [
+        "grotesque",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Shard",
+      "weight": 1,
+      "tags": [
+        "hazard",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Tempest",
+      "weight": 3,
+      "tags": [
+        "outdoor",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Umbra",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Vigil",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "holdout"
+      ]
+    },
+    {
+      "text": "Warden",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Zero",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Yoke",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Zenith",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "machine"
+      ]
+    },
+    {
+      "text": "Hush",
+      "weight": 2,
+      "tags": [
+        "darkling",
+        "indoor"
+      ]
+    },
+    {
+      "text": "Gallows",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "urban"
+      ]
+    },
+    {
+      "text": "Razor",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "timer"
+      ]
+    },
+    {
+      "text": "Thorn",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "cult"
+      ]
+    }
+  ],
+  "operationCodenameNouns": [
+    {
+      "text": "Lantern",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "darkling"
+      ]
+    },
+    {
+      "text": "Signal",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Bell",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Trench",
+      "weight": 3,
+      "tags": [
+        "urban",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Spindle",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Cathedral",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Purge",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Harvest",
+      "weight": 3,
+      "tags": [
+        "grotesque",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Overflow",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Watchtower",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Ledger",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Warden",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "stricken"
+      ]
+    },
+    {
+      "text": "Vein",
+      "weight": 1,
+      "tags": [
+        "grotesque",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Relay",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "Shroud",
+      "weight": 2,
+      "tags": [
+        "darkling",
+        "cult"
+      ]
+    },
+    {
+      "text": "Vault",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Floodgate",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Quarantine",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "Mirror",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Cinder",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "urban"
+      ]
+    },
+    {
+      "text": "Bastion",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "holdout"
+      ]
+    },
+    {
+      "text": "Beacon",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Cipher",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Citadel",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "indoor"
+      ]
+    },
+    {
+      "text": "Grave",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Harbor",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Needle",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "machine"
+      ]
+    },
+    {
+      "text": "Oracle",
+      "weight": 1,
+      "tags": [
+        "gifted",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Palisade",
+      "weight": 4,
+      "tags": [
+        "holdout",
+        "urban"
+      ]
+    },
+    {
+      "text": "Pilgrim",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "urban"
+      ]
+    },
+    {
+      "text": "Pulse",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Rook",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "machine"
+      ]
+    },
+    {
+      "text": "Sanctum",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Spear",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "urban"
+      ]
+    },
+    {
+      "text": "Spire",
+      "weight": 4,
+      "tags": [
+        "outdoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Transit",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "machine"
+      ]
+    },
+    {
+      "text": "Ward",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "urban"
+      ]
+    },
+    {
+      "text": "Wharf",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Writ",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "machine"
+      ]
+    },
+    {
+      "text": "Catalyst",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "machine"
+      ]
+    },
+    {
+      "text": "Crossing",
+      "weight": 3,
+      "tags": [
+        "outdoor",
+        "timer"
+      ]
+    },
+    {
+      "text": "Falcon",
+      "weight": 3,
+      "tags": [
+        "outdoor",
+        "timer"
+      ]
+    },
+    {
+      "text": "Furnace",
+      "weight": 3,
+      "tags": [
+        "industrial",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Harvester",
+      "weight": 3,
+      "tags": [
+        "grotesque",
+        "machine"
+      ]
+    },
+    {
+      "text": "Mosaic",
+      "weight": 1,
+      "tags": [
+        "anomaly",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Parallax",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "machine"
+      ]
+    },
+    {
+      "text": "Rift",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Sentinel",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Tramline",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Laneway",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "indoor"
+      ]
+    }
+  ],
+  "operationCodenameSuffixes": [
+    {
+      "text": "Protocol",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Directive",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Litany",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Fall",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "urban"
+      ]
+    },
+    {
+      "text": "Vector",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "machine"
+      ]
+    },
+    {
+      "text": "Threshold",
+      "weight": 2,
+      "tags": [
+        "indoor",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Rupture",
+      "weight": 2,
+      "tags": [
+        "hazard",
+        "grotesque"
+      ]
+    },
+    {
+      "text": "Echo",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Spiral",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Bastion",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "holdout"
+      ]
+    },
+    {
+      "text": "Night",
+      "weight": 2,
+      "tags": [
+        "darkling",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Engine",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Crown",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "urban"
+      ]
+    },
+    {
+      "text": "March",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "timer"
+      ]
+    },
+    {
+      "text": "Burden",
+      "weight": 3,
+      "tags": [
+        "stricken",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Circuit",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Chasm",
+      "weight": 1,
+      "tags": [
+        "anomaly",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Ember",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "Witness",
+      "weight": 2,
+      "tags": [
+        "gifted",
+        "urban"
+      ]
+    },
+    {
+      "text": "Gate",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "timer"
+      ]
+    },
+    {
+      "text": "Clause",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Sigil",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Mandate",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Cycle",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "Debt",
+      "weight": 3,
+      "tags": [
+        "urban",
+        "cult"
+      ]
+    },
+    {
+      "text": "Line",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "timer"
+      ]
+    },
+    {
+      "text": "Horizon",
+      "weight": 2,
+      "tags": [
+        "outdoor",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Orbit",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Brand",
+      "weight": 2,
+      "tags": [
+        "cult",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Chorus",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Dusk",
+      "weight": 2,
+      "tags": [
+        "darkling",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Breaker",
+      "weight": 3,
+      "tags": [
+        "industrial",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Seal",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "ritual"
+      ]
+    },
+    {
+      "text": "Oath",
+      "weight": 3,
+      "tags": [
+        "urban",
+        "cult"
+      ]
+    },
+    {
+      "text": "Lattice",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "industrial"
+      ]
+    },
+    {
+      "text": "Archive",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "indoor"
+      ]
+    },
+    {
+      "text": "Drop",
+      "weight": 3,
+      "tags": [
+        "timer",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Storm",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "Process",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "Contour",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "urban"
+      ]
+    },
+    {
+      "text": "Mirror",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Index",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "Vault",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "Chain",
+      "weight": 2,
+      "tags": [
+        "grotesque",
+        "cult"
+      ]
+    },
+    {
+      "text": "Wake",
+      "weight": 1,
+      "tags": [
+        "darkling",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Edge",
+      "weight": 3,
+      "tags": [
+        "timer",
+        "hazard"
+      ]
+    },
+    {
+      "text": "Census",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "machine"
+      ]
+    },
+    {
+      "text": "Pulse",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "Route",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "timer"
+      ]
+    },
+    {
+      "text": "Passage",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban"
+      ]
+    }
+  ],
+  "toneTags": [
+    {
+      "text": "claustrophobic",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "industrial",
+      "weight": 3,
+      "tags": [
+        "industrial"
+      ]
+    },
+    {
+      "text": "ritual",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "machine-failure",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "wet-decay",
+      "weight": 3,
+      "tags": [
+        "hazard"
+      ]
+    },
+    {
+      "text": "panic-urban",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "blackout",
+      "weight": 2,
+      "tags": [
+        "darkling"
+      ]
+    },
+    {
+      "text": "quarantine",
+      "weight": 3,
+      "tags": [
+        "stricken"
+      ]
+    },
+    {
+      "text": "bio-horror",
+      "weight": 2,
+      "tags": [
+        "grotesque"
+      ]
+    },
+    {
+      "text": "signal-ghost",
+      "weight": 2,
+      "tags": [
+        "anomaly",
+        "machine"
+      ]
+    },
+    {
+      "text": "siege",
+      "weight": 3,
+      "tags": [
+        "timer"
+      ]
+    },
+    {
+      "text": "paranoid",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "grim-heroic",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "sacrificial",
+      "weight": 2,
+      "tags": [
+        "ritual"
+      ]
+    },
+    {
+      "text": "containment-breach",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "machine"
+      ]
+    },
+    {
+      "text": "night-operations",
+      "weight": 3,
+      "tags": [
+        "outdoor"
+      ]
+    },
+    {
+      "text": "abandoned-civic",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "indoor"
+      ]
+    },
+    {
+      "text": "cold-technical",
+      "weight": 3,
+      "tags": [
+        "machine"
+      ]
+    },
+    {
+      "text": "occult-military",
+      "weight": 3,
+      "tags": [
+        "cult",
+        "machine"
+      ]
+    },
+    {
+      "text": "last-train-out",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "urban"
+      ]
+    },
+    {
+      "text": "flooded-industrial",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "industrial"
+      ]
+    },
+    {
+      "text": "no-light",
+      "weight": 2,
+      "tags": [
+        "darkling",
+        "indoor"
+      ]
+    },
+    {
+      "text": "siren-panic",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "timer"
+      ]
+    },
+    {
+      "text": "forbidden-liturgy",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "ritual"
+      ]
+    },
+    {
+      "text": "terminal-quarantine",
+      "weight": 4,
+      "tags": [
+        "stricken",
+        "urban"
+      ]
+    },
+    {
+      "text": "steel-catacomb",
+      "weight": 4,
+      "tags": [
+        "industrial",
+        "indoor"
+      ]
+    },
+    {
+      "text": "storm-battered",
+      "weight": 3,
+      "tags": [
+        "outdoor",
+        "hazard"
+      ]
+    },
+    {
+      "text": "static-haunted",
+      "weight": 2,
+      "tags": [
+        "machine",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "echoing-void",
+      "weight": 2,
+      "tags": [
+        "anomaly"
+      ]
+    },
+    {
+      "text": "toxic-rain",
+      "weight": 3,
+      "tags": [
+        "hazard",
+        "outdoor"
+      ]
+    },
+    {
+      "text": "close-quarters",
+      "weight": 3,
+      "tags": [
+        "indoor"
+      ]
+    },
+    {
+      "text": "cold-mercy",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "ruin-civic",
+      "weight": 3,
+      "tags": [
+        "urban"
+      ]
+    },
+    {
+      "text": "relay-warfare",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "timer"
+      ]
+    },
+    {
+      "text": "descent",
+      "weight": 1,
+      "tags": [
+        "hazard",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "supply-collapse",
+      "weight": 4,
+      "tags": [
+        "urban",
+        "timer"
+      ]
+    },
+    {
+      "text": "vault-heist",
+      "weight": 4,
+      "tags": [
+        "indoor",
+        "urban"
+      ]
+    },
+    {
+      "text": "bleak-salvage",
+      "weight": 3,
+      "tags": [
+        "industrial"
+      ]
+    },
+    {
+      "text": "graveyard-shift",
+      "weight": 3,
+      "tags": [
+        "darkling",
+        "industrial"
+      ]
+    },
+    {
+      "text": "containment-clock",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "machine"
+      ]
+    },
+    {
+      "text": "machine-liturgy",
+      "weight": 3,
+      "tags": [
+        "machine",
+        "cult"
+      ]
+    },
+    {
+      "text": "flesh-engine",
+      "weight": 3,
+      "tags": [
+        "grotesque",
+        "machine"
+      ]
+    },
+    {
+      "text": "broken-command",
+      "weight": 4,
+      "tags": [
+        "machine",
+        "urban"
+      ]
+    },
+    {
+      "text": "fog-of-dread",
+      "weight": 1,
+      "tags": [
+        "anomaly",
+        "hazard"
+      ]
+    },
+    {
+      "text": "silent-evac",
+      "weight": 4,
+      "tags": [
+        "timer",
+        "urban"
+      ]
+    },
+    {
+      "text": "urban-rot",
+      "weight": 3,
+      "tags": [
+        "urban",
+        "hazard"
+      ]
+    },
+    {
+      "text": "sublevel-siege",
+      "weight": 3,
+      "tags": [
+        "indoor",
+        "timer"
+      ]
+    },
+    {
+      "text": "hollow-triumph",
+      "weight": 1,
+      "tags": [
+        "cult",
+        "anomaly"
+      ]
+    },
+    {
+      "text": "signal-blackout",
+      "weight": 3,
+      "tags": [
+        "machine",
+        "darkling"
+      ]
+    },
+    {
+      "text": "last-safe-room",
+      "weight": 3,
+      "tags": [
+        "holdout",
+        "indoor"
+      ]
+    }
+  ]
+}
