@@ -104,6 +104,8 @@ const EDITABLE_TILE_FIELDS = [
   "isVariation",
   "dominantTileId"
 ];
+const CUSTOM_ROOM_NAMES_KEY = "fleshmoon_custom_room_names_v1";
+const HIDDEN_ROOM_NAMES_KEY = "fleshmoon_hidden_room_names_v1";
 
 const state = {
   options: null,
@@ -114,6 +116,10 @@ const state = {
   lockState: {},
   history: [],
   selectedTags: new Set(),
+  roomLibrary: {
+    customTiles: [],
+    hiddenTileIds: new Set()
+  },
   mapUi: {
     dragSourceIndex: null,
     menuTargetIndex: null
@@ -252,10 +258,58 @@ function setupMapEditorUi() {
     const actionButton = event.target.closest("button[data-menu-action]");
     if (actionButton) {
       const action = actionButton.dataset.menuAction || "";
-      closeMapCardMenu();
       if (action === "remove") {
+        closeMapCardMenu();
         clearTileFromCell(targetIndex);
+        return;
       }
+
+      if (action === "rename-card") {
+        const nameInput = refs.mapCardMenu.querySelector(".map-card-rename-input");
+        const tagsInput = refs.mapCardMenu.querySelector(".map-card-rename-tags-input");
+        const nextName = nameInput ? nameInput.value : "";
+        const nextTags = tagsInput ? tagsInput.value : "";
+        closeMapCardMenu();
+        updateCardLabelAndTags(targetIndex, nextName, nextTags);
+        return;
+      }
+
+      if (action === "add-room-name") {
+        const nameInput = refs.mapCardMenu.querySelector(".map-card-new-name-input");
+        const tagsInput = refs.mapCardMenu.querySelector(".map-card-new-tags-input");
+        const biomeSelect = refs.mapCardMenu.querySelector(".map-card-new-biome-select");
+        const created = addCustomRoomTile({
+          name: nameInput ? nameInput.value : "",
+          biome: biomeSelect ? biomeSelect.value : "unknown",
+          tags: tagsInput ? tagsInput.value : ""
+        });
+        if (created) {
+          if (nameInput) nameInput.value = "";
+          if (tagsInput) tagsInput.value = "";
+          const targetCell = state.map?.cells?.[targetIndex] || null;
+          renderMapCardMenuOptions(targetCell);
+        }
+        return;
+      }
+
+      if (action === "delete-room-name") {
+        const tileId = actionButton.dataset.tileId || "";
+        const removedName = removeRoomTileFromLibrary(tileId);
+        if (removedName) {
+          setMapStatus(`Deleted room name from picker: ${removedName}.`);
+          const targetCell = state.map?.cells?.[targetIndex] || null;
+          renderMapCardMenuOptions(targetCell);
+        }
+        return;
+      }
+
+      if (action === "reset-room-list") {
+        resetRoomLibrary();
+        const targetCell = state.map?.cells?.[targetIndex] || null;
+        renderMapCardMenuOptions(targetCell);
+        return;
+      }
+
       return;
     }
 
@@ -324,6 +378,7 @@ async function loadData() {
 
     state.options = options;
     state.zones = normalizeZones(zonesRaw);
+    loadRoomLibrary();
 
     validateOptions();
     validateZones();
@@ -461,6 +516,182 @@ function validateZones() {
     }
     ids.add(tile.id);
   });
+}
+
+function loadRoomLibrary() {
+  const seenIds = new Set((state.zones?.tiles || []).map((tile) => tile.id));
+  const customTiles = [];
+  const hiddenTileIds = new Set();
+
+  try {
+    const rawCustom = JSON.parse(localStorage.getItem(CUSTOM_ROOM_NAMES_KEY) || "[]");
+    if (Array.isArray(rawCustom)) {
+      rawCustom.forEach((entry) => {
+        const tile = normalizeCustomRoomTile(entry);
+        if (!tile || seenIds.has(tile.id)) return;
+        seenIds.add(tile.id);
+        customTiles.push(tile);
+      });
+    }
+  } catch (err) {
+    customTiles.length = 0;
+  }
+
+  try {
+    const rawHidden = JSON.parse(localStorage.getItem(HIDDEN_ROOM_NAMES_KEY) || "[]");
+    if (Array.isArray(rawHidden)) {
+      rawHidden.forEach((id) => {
+        const text = String(id || "").trim();
+        if (text) hiddenTileIds.add(text);
+      });
+    }
+  } catch (err) {
+    hiddenTileIds.clear();
+  }
+
+  state.roomLibrary.customTiles = customTiles;
+  state.roomLibrary.hiddenTileIds = hiddenTileIds;
+}
+
+function saveRoomLibrary() {
+  try {
+    const serializableCustom = state.roomLibrary.customTiles.map((tile) => ({
+      id: tile.id,
+      name: tile.name,
+      biome: tile.biome,
+      tags: [...tile.tags],
+      image: tile.image || "",
+      weight: Number(tile.weight || 1)
+    }));
+    localStorage.setItem(CUSTOM_ROOM_NAMES_KEY, JSON.stringify(serializableCustom));
+    localStorage.setItem(HIDDEN_ROOM_NAMES_KEY, JSON.stringify([...state.roomLibrary.hiddenTileIds]));
+  } catch (err) {
+    // Persistence is optional; ignore storage failures.
+  }
+}
+
+function parseTagInput(value) {
+  if (Array.isArray(value)) {
+    return Array.from(new Set(
+      value
+        .map((tag) => String(tag || "").trim().toLowerCase())
+        .filter(Boolean)
+    ));
+  }
+
+  return Array.from(new Set(
+    String(value || "")
+      .split(",")
+      .map((tag) => tag.trim().toLowerCase())
+      .filter(Boolean)
+  ));
+}
+
+function buildCustomRoomTileId(name) {
+  const base = String(name || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "")
+    .slice(0, 24) || "room";
+  const nonce = Math.random().toString(36).slice(2, 7);
+  return `custom_${base}_${Date.now().toString(36)}_${nonce}`;
+}
+
+function normalizeCustomRoomTile(raw) {
+  if (!raw || typeof raw !== "object") return null;
+  const name = String(raw.name || "").trim();
+  if (!name) return null;
+
+  const id = String(raw.id || buildCustomRoomTileId(name)).trim();
+  if (!id) return null;
+
+  const biome = String(raw.biome || "unknown").trim() || "unknown";
+  const tags = parseTagInput(raw.tags);
+  const image = resolveZoneTileImage({
+    id,
+    name,
+    biome,
+    image: raw.image ? String(raw.image) : ""
+  });
+
+  return {
+    id,
+    name,
+    biome,
+    tags,
+    weight: Math.max(1, Number(raw.weight || 1)),
+    image,
+    isCustom: true
+  };
+}
+
+function getEditableRoomTiles() {
+  const hidden = state.roomLibrary.hiddenTileIds;
+  const baseTiles = (state.zones?.tiles || []).filter((tile) => !hidden.has(tile.id));
+  const customTiles = (state.roomLibrary.customTiles || []).filter((tile) => !hidden.has(tile.id));
+  return [...baseTiles, ...customTiles];
+}
+
+function findEditableRoomTileById(tileId) {
+  if (!tileId) return null;
+  const lookupId = String(tileId);
+  return getEditableRoomTiles().find((tile) => tile.id === lookupId) || null;
+}
+
+function getRoomLibraryBiomes() {
+  const biomeSet = new Set();
+  (state.zones?.tiles || []).forEach((tile) => biomeSet.add(tile.biome || "unknown"));
+  (state.roomLibrary.customTiles || []).forEach((tile) => biomeSet.add(tile.biome || "unknown"));
+  if (biomeSet.size === 0) biomeSet.add("unknown");
+  return Array.from(biomeSet).sort((a, b) => a.localeCompare(b));
+}
+
+function addCustomRoomTile({ name, biome, tags }) {
+  const normalized = normalizeCustomRoomTile({
+    id: buildCustomRoomTileId(name),
+    name,
+    biome,
+    tags
+  });
+  if (!normalized) {
+    setMapStatus("Room name must include at least one visible character.");
+    return null;
+  }
+
+  state.roomLibrary.customTiles.push(normalized);
+  state.roomLibrary.hiddenTileIds.delete(normalized.id);
+  saveRoomLibrary();
+  setMapStatus(`Added new room name: ${normalized.name}.`);
+  return normalized;
+}
+
+function removeRoomTileFromLibrary(tileId) {
+  const lookupId = String(tileId || "").trim();
+  if (!lookupId) return "";
+
+  const customIndex = state.roomLibrary.customTiles.findIndex((tile) => tile.id === lookupId);
+  if (customIndex >= 0) {
+    const [removedTile] = state.roomLibrary.customTiles.splice(customIndex, 1);
+    state.roomLibrary.hiddenTileIds.delete(lookupId);
+    saveRoomLibrary();
+    return removedTile.name || lookupId;
+  }
+
+  const baseTile = state.zones?.tiles?.find((tile) => tile.id === lookupId);
+  if (baseTile) {
+    state.roomLibrary.hiddenTileIds.add(lookupId);
+    saveRoomLibrary();
+    return baseTile.name || lookupId;
+  }
+
+  return "";
+}
+
+function resetRoomLibrary() {
+  state.roomLibrary.customTiles = [];
+  state.roomLibrary.hiddenTileIds = new Set();
+  saveRoomLibrary();
+  setMapStatus("Room name picker reset to defaults.");
 }
 
 function generateMission({ mode }) {
@@ -3632,11 +3863,11 @@ function swapOrMoveMapCellTile(sourceIndex, targetIndex) {
 }
 
 function setTileForCell(cellIndex, tileId) {
-  if (!state.map || !state.zones?.tiles?.length) return;
+  if (!state.map) return;
   const cell = state.map.cells[cellIndex];
   if (!cell) return;
 
-  const tile = state.zones.tiles.find((item) => item.id === tileId);
+  const tile = findEditableRoomTileById(tileId);
   if (!tile) return;
   const previousName = cell.tileName || "";
   const hadTile = !!cell.tileId;
@@ -3659,6 +3890,26 @@ function setTileForCell(cellIndex, tileId) {
   } else {
     setMapStatus(`Added ${tile.name} at row ${cell.row + 1}, col ${cell.col + 1}.`);
   }
+}
+
+function updateCardLabelAndTags(cellIndex, nextNameInput, tagInput) {
+  if (!state.map) return;
+  const cell = state.map.cells[cellIndex];
+  if (!cell || !cell.tileId) return;
+
+  const nextName = String(nextNameInput || "").trim();
+  if (!nextName) {
+    setMapStatus("Card name cannot be empty.");
+    return;
+  }
+
+  cell.tileName = nextName;
+  cell.tags = parseTagInput(tagInput);
+
+  attachMapToMission();
+  renderMap();
+  if (state.mission) renderMission();
+  setMapStatus(`Updated card name to "${nextName}".`);
 }
 
 function clearTileFromCell(cellIndex) {
@@ -3712,23 +3963,114 @@ function renderMapCardMenuOptions(targetCell = null) {
   if (!refs.mapCardMenuList) return;
   refs.mapCardMenuList.innerHTML = "";
   if (refs.mapCardMenuTitle) {
-    refs.mapCardMenuTitle.textContent = targetCell?.tileId ? "Change or Remove Card" : "Add Card";
+    refs.mapCardMenuTitle.textContent = targetCell?.tileId ? "Edit Card and Room Names" : "Add Card and Room Names";
   }
 
+  const tools = document.createElement("section");
+  tools.className = "map-card-menu-tools";
+
   if (targetCell?.tileId) {
+    const editTitle = document.createElement("p");
+    editTitle.className = "map-card-menu-subtitle";
+    editTitle.textContent = "Selected Card";
+
+    const renameInput = document.createElement("input");
+    renameInput.type = "text";
+    renameInput.className = "map-card-menu-input map-card-rename-input";
+    renameInput.value = targetCell.tileName || "";
+    renameInput.placeholder = "Card name";
+
+    const renameTagsInput = document.createElement("input");
+    renameTagsInput.type = "text";
+    renameTagsInput.className = "map-card-menu-input map-card-rename-tags-input";
+    renameTagsInput.value = Array.isArray(targetCell.tags) ? targetCell.tags.join(", ") : "";
+    renameTagsInput.placeholder = "tags (comma-separated)";
+
+    const cardActions = document.createElement("div");
+    cardActions.className = "map-card-menu-tool-actions";
+
+    const renameButton = document.createElement("button");
+    renameButton.type = "button";
+    renameButton.className = "map-card-menu-option";
+    renameButton.dataset.menuAction = "rename-card";
+    renameButton.textContent = "Save Card Name/Tags";
+
     const removeButton = document.createElement("button");
     removeButton.type = "button";
     removeButton.className = "map-card-menu-option map-card-menu-danger";
     removeButton.dataset.menuAction = "remove";
     removeButton.textContent = "Remove Card";
     removeButton.title = `Remove ${targetCell.tileName || "card"}`;
-    refs.mapCardMenuList.appendChild(removeButton);
+
+    cardActions.appendChild(renameButton);
+    cardActions.appendChild(removeButton);
+
+    tools.appendChild(editTitle);
+    tools.appendChild(renameInput);
+    tools.appendChild(renameTagsInput);
+    tools.appendChild(cardActions);
   }
 
-  const tiles = [...(state.zones?.tiles || [])]
+  const libraryTitle = document.createElement("p");
+  libraryTitle.className = "map-card-menu-subtitle";
+  libraryTitle.textContent = "Room Name Library";
+
+  const newNameInput = document.createElement("input");
+  newNameInput.type = "text";
+  newNameInput.className = "map-card-menu-input map-card-new-name-input";
+  newNameInput.placeholder = "New room name";
+
+  const newTagsInput = document.createElement("input");
+  newTagsInput.type = "text";
+  newTagsInput.className = "map-card-menu-input map-card-new-tags-input";
+  newTagsInput.placeholder = "tags (comma-separated)";
+
+  const biomeSelect = document.createElement("select");
+  biomeSelect.className = "map-card-menu-select map-card-new-biome-select";
+  const biomeOptions = getRoomLibraryBiomes();
+  biomeOptions.forEach((biome) => {
+    const option = document.createElement("option");
+    option.value = biome;
+    option.textContent = biome.replace(/[_-]+/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase());
+    biomeSelect.appendChild(option);
+  });
+
+  const libraryActions = document.createElement("div");
+  libraryActions.className = "map-card-menu-tool-actions";
+
+  const addNameButton = document.createElement("button");
+  addNameButton.type = "button";
+  addNameButton.className = "map-card-menu-option";
+  addNameButton.dataset.menuAction = "add-room-name";
+  addNameButton.textContent = "Add Room Name";
+
+  const resetButton = document.createElement("button");
+  resetButton.type = "button";
+  resetButton.className = "map-card-menu-option map-card-menu-secondary";
+  resetButton.dataset.menuAction = "reset-room-list";
+  resetButton.textContent = "Reset Picker";
+
+  libraryActions.appendChild(addNameButton);
+  libraryActions.appendChild(resetButton);
+
+  tools.appendChild(libraryTitle);
+  tools.appendChild(newNameInput);
+  tools.appendChild(newTagsInput);
+  tools.appendChild(biomeSelect);
+  tools.appendChild(libraryActions);
+  refs.mapCardMenuList.appendChild(tools);
+
+  const divider = document.createElement("div");
+  divider.className = "map-card-menu-divider";
+  refs.mapCardMenuList.appendChild(divider);
+
+  const tiles = getEditableRoomTiles()
     .sort((a, b) => a.biome.localeCompare(b.biome) || a.name.localeCompare(b.name));
   if (tiles.length === 0) {
-    refs.mapCardMenuList.textContent = "No tiles available.";
+    const emptyMessage = document.createElement("p");
+    emptyMessage.className = "map-card-menu-empty";
+    emptyMessage.textContent = "No room names available. Add one above.";
+    refs.mapCardMenuList.appendChild(emptyMessage);
     return;
   }
 
@@ -3750,13 +4092,27 @@ function renderMapCardMenuOptions(targetCell = null) {
       refs.mapCardMenuList.appendChild(currentGroup);
     }
 
+    const optionRow = document.createElement("div");
+    optionRow.className = "map-card-menu-option-row";
+
     const option = document.createElement("button");
     option.type = "button";
-    option.className = "map-card-menu-option";
+    option.className = "map-card-menu-option map-card-menu-option-main";
     option.dataset.tileId = tile.id;
-    option.textContent = tile.name;
+    option.textContent = tile.isCustom ? `${tile.name} (Custom)` : tile.name;
     option.title = `${tile.name} (${tile.biome})`;
-    currentGroup.appendChild(option);
+
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.className = "map-card-menu-option-delete";
+    deleteButton.dataset.menuAction = "delete-room-name";
+    deleteButton.dataset.tileId = tile.id;
+    deleteButton.textContent = "Delete";
+    deleteButton.title = `Delete room name: ${tile.name}`;
+
+    optionRow.appendChild(option);
+    optionRow.appendChild(deleteButton);
+    currentGroup.appendChild(optionRow);
   });
 }
 

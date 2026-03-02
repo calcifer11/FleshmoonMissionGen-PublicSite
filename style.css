@@ -490,6 +490,56 @@ select {
   gap: 8px;
 }
 
+.map-card-menu-tools {
+  border: 1px solid #2f3f4d;
+  border-radius: 8px;
+  background: #111920;
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+}
+
+.map-card-menu-subtitle {
+  margin: 2px 0 0;
+  color: #a9c4d8;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.map-card-menu-input,
+.map-card-menu-select {
+  border: 1px solid #344653;
+  border-radius: 6px;
+  background: #0f1821;
+  color: #dce7f0;
+  font-size: 0.81rem;
+  padding: 6px 8px;
+}
+
+.map-card-menu-input::placeholder {
+  color: #7f9bb0;
+}
+
+.map-card-menu-tool-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.map-card-menu-divider {
+  height: 1px;
+  background: #263542;
+  margin: 2px 0 4px;
+}
+
+.map-card-menu-empty {
+  margin: 0;
+  color: #9eb8cb;
+  font-size: 0.82rem;
+}
+
 .map-card-menu-group {
   border: 1px solid #273643;
   border-radius: 8px;
@@ -515,6 +565,39 @@ select {
   text-align: left;
   font-size: 0.83rem;
   padding: 6px 8px;
+}
+
+.map-card-menu-option-main {
+  width: 100%;
+}
+
+.map-card-menu-option-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  align-items: center;
+}
+
+.map-card-menu-option-delete {
+  border: 1px solid #4f5158;
+  border-radius: 6px;
+  background: #221719;
+  color: #e4b9bc;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 7px 8px;
+}
+
+.map-card-menu-option-delete:hover,
+.map-card-menu-option-delete:focus-visible {
+  background: #3b1f23;
+  border-color: #a25d63;
+}
+
+.map-card-menu-secondary {
+  border-color: #3e5668;
+  background: #14222e;
+  color: #c7dce9;
 }
 
 .map-card-menu-danger {
