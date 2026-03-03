@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Zone Card Generator UI</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Segoe UI, Tahoma, sans-serif; background: #111826; color: #e8edf6; }
+    .wrap { max-width: 1300px; margin: 0 auto; padding: 14px; display: grid; gap: 10px; }
+    .top { display: grid; grid-template-columns: 1.2fr 1fr; gap: 10px; }
+    .panel { background: #1c2533; border: 1px solid #3d4c60; border-radius: 8px; padding: 10px; }
+    input, select, textarea, button { font: inherit; }
+    input[type=text], input[type=number], select, textarea {
+      width: 100%;
+      padding: 7px;
+      border: 1px solid #3d4c60;
+      border-radius: 7px;
+      background: #273446;
+      color: #e8edf6;
+    }
+    textarea { min-height: 90px; resize: vertical; }
+    button {
+      padding: 7px 10px;
+      border: 1px solid #516580;
+      border-radius: 7px;
+      background: #2d3b4b;
+      color: #e8edf6;
+      cursor: pointer;
+    }
+    button.primary { background: #58a6f1; color: #0f1a27; font-weight: 700; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .list { max-height: 390px; overflow: auto; border: 1px solid #3d4c60; border-radius: 7px; padding: 6px; background: #172130; }
+    .b { border: 1px solid #3d4c60; border-radius: 7px; padding: 6px; margin-bottom: 6px; background: #202b3b; }
+    .tile { display: grid; grid-template-columns: auto 1fr; gap: 8px; margin-bottom: 4px; }
+    .tile code { color: #9ecff7; font-size: 12px; }
+    .gallery-tools { display: grid; grid-template-columns: 2fr auto auto auto; gap: 8px; align-items: end; }
+    .gallery { display: grid; grid-template-columns: 1.5fr 1fr; gap: 10px; }
+    .grid {
+      max-height: 500px;
+      overflow: auto;
+      border: 1px solid #3d4c60;
+      border-radius: 7px;
+      background: #172130;
+      padding: 8px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 8px;
+    }
+    .card { text-align: left; border: 1px solid #445671; border-radius: 7px; background: #202b3b; padding: 6px; position: relative; }
+    .card img { width: 100%; height: 90px; object-fit: cover; border-radius: 6px; background: #0f1722; }
+    .card.active { outline: 2px solid #74bef7; }
+    .card.new { box-shadow: inset 0 0 0 2px #95f0a8; }
+    .card.updated { box-shadow: inset 0 0 0 2px #75c6ff; }
+    .badge { position: absolute; right: 8px; top: 8px; font-size: 10px; padding: 2px 5px; border-radius: 999px; color: #08131f; }
+    .badge.new { background: #95f0a8; }
+    .badge.updated { background: #75c6ff; }
+    .name { font-size: 12px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .path { font-size: 11px; color: #9eb4cb; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .preview { border: 1px solid #3d4c60; border-radius: 7px; background: #172130; padding: 8px; }
+    .preview img { width: 100%; max-height: 360px; object-fit: contain; border: 1px solid #3d4c60; border-radius: 6px; background: #101923; }
+    pre { margin: 0; white-space: pre-wrap; word-break: break-word; max-height: 220px; overflow: auto; border: 1px solid #3d4c60; border-radius: 7px; background: #101923; padding: 8px; }
+    @media (max-width:1080px) { .top, .gallery, .gallery-tools { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Zone Card Generator UI</h1>
+    <div id="keyStatus">Checking API key status...</div>
+
+    <div class="top">
+      <section class="panel">
+        <h2>Selection</h2>
+        <label>Search zones<input id="filter" type="text" placeholder="Filter zones"></label>
+        <label><input id="all" type="checkbox"> Generate all zones</label>
+        <div class="actions">
+          <button id="selVis" type="button">Select Visible</button>
+          <button id="clrSel" type="button">Clear Selection</button>
+        </div>
+        <p id="selCount"></p>
+        <div id="zones" class="list"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Generation</h2>
+        <label>Common style prompt<textarea id="style"></textarea></label>
+        <div class="row">
+          <label>Model<input id="model" type="text" value="gpt-image-1"></label>
+          <label>Size
+            <select id="size">
+              <option value="1024x1024">1024x1024</option>
+              <option value="1536x1024" selected>1536x1024</option>
+              <option value="1024x1536">1024x1536</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label>Quality
+            <select id="quality">
+              <option value="auto">auto</option>
+              <option value="high" selected>high</option>
+              <option value="medium">medium</option>
+              <option value="low">low</option>
+            </select>
+          </label>
+          <label>Delay (ms)<input id="delay" type="number" min="0" value="0"></label>
+        </div>
+        <label><input id="skip" type="checkbox"> Skip existing files</label>
+        <label><input id="dry" type="checkbox"> Dry run only</label>
+        <div class="actions"><button id="run" class="primary" type="button">Generate</button></div>
+        <p id="runStatus"></p>
+        <h2>Output</h2>
+        <pre id="out">No run yet.</pre>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Image Browser</h2>
+      <div class="gallery-tools">
+        <label>Search images<input id="imgFilter" type="text" placeholder="Filter by path/tile"></label>
+        <label><input id="changedOnly" type="checkbox"> Changed only</label>
+        <button id="refresh" type="button">Refresh Images</button>
+        <button id="clearHi" type="button">Clear Highlights</button>
+      </div>
+      <p id="imgCount"></p>
+      <div class="gallery">
+        <div id="grid" class="grid"></div>
+        <aside class="preview">
+          <div id="pTitle">No image selected</div>
+          <img id="pImg" alt="preview">
+          <pre id="pMeta"></pre>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const st = { zones: [], sel: new Set(), images: [], changed: new Set(), news: new Set(), updated: new Set(), active: "" };
+    const r = {
+      key: document.getElementById("keyStatus"),
+      f: document.getElementById("filter"),
+      all: document.getElementById("all"),
+      selVis: document.getElementById("selVis"),
+      clrSel: document.getElementById("clrSel"),
+      zones: document.getElementById("zones"),
+      selCount: document.getElementById("selCount"),
+      style: document.getElementById("style"),
+      model: document.getElementById("model"),
+      size: document.getElementById("size"),
+      quality: document.getElementById("quality"),
+      delay: document.getElementById("delay"),
+      skip: document.getElementById("skip"),
+      dry: document.getElementById("dry"),
+      run: document.getElementById("run"),
+      runStatus: document.getElementById("runStatus"),
+      out: document.getElementById("out"),
+      imgFilter: document.getElementById("imgFilter"),
+      changedOnly: document.getElementById("changedOnly"),
+      refresh: document.getElementById("refresh"),
+      clearHi: document.getElementById("clearHi"),
+      imgCount: document.getElementById("imgCount"),
+      grid: document.getElementById("grid"),
+      pTitle: document.getElementById("pTitle"),
+      pImg: document.getElementById("pImg"),
+      pMeta: document.getElementById("pMeta")
+    };
+
+    function matchZone(z, q) {
+      if (!q) return true;
+      const t = (z.id + " " + z.name + " " + z.biome).toLowerCase();
+      return t.includes(q);
+    }
+
+    function zoneGroups(list) {
+      const m = new Map();
+      for (const z of list) {
+        if (!m.has(z.biome)) m.set(z.biome, []);
+        m.get(z.biome).push(z);
+      }
+      return [...m.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+    }
+
+    function renderZones() {
+      const q = r.f.value.trim().toLowerCase();
+      const vis = st.zones.filter((z) => matchZone(z, q));
+      r.zones.innerHTML = "";
+      for (const [biome, tiles] of zoneGroups(vis)) {
+        const b = document.createElement("div");
+        b.className = "b";
+        const h = document.createElement("div");
+        h.style.display = "flex";
+        h.style.justifyContent = "space-between";
+        const title = document.createElement("strong");
+        title.textContent = biome + " (" + tiles.length + ")";
+        h.appendChild(title);
+        const controls = document.createElement("div");
+        const s = document.createElement("button");
+        s.type = "button";
+        s.textContent = "Select";
+        s.onclick = () => { for (const z of tiles) st.sel.add(z.id); renderZones(); updSel(); };
+        const c = document.createElement("button");
+        c.type = "button";
+        c.textContent = "Clear";
+        c.onclick = () => { for (const z of tiles) st.sel.delete(z.id); renderZones(); updSel(); };
+        controls.appendChild(s);
+        controls.appendChild(c);
+        h.appendChild(controls);
+        b.appendChild(h);
+
+        for (const z of tiles) {
+          const row = document.createElement("label");
+          row.className = "tile";
+          const cb = document.createElement("input");
+          cb.type = "checkbox";
+          cb.checked = st.sel.has(z.id);
+          cb.onchange = () => { if (cb.checked) st.sel.add(z.id); else st.sel.delete(z.id); updSel(); };
+          const info = document.createElement("div");
+          const name = document.createElement("div");
+          name.textContent = z.name;
+          const id = document.createElement("code");
+          id.textContent = z.id;
+          info.appendChild(name);
+          info.appendChild(id);
+          row.appendChild(cb);
+          row.appendChild(info);
+          b.appendChild(row);
+        }
+        r.zones.appendChild(b);
+      }
+      if (!vis.length) r.zones.textContent = "No zones match filter.";
+    }
+
+    function updSel() {
+      r.selCount.textContent = "Selected zones: " + st.sel.size + " / " + st.zones.length;
+    }
+
+    function renderPreview() {
+      const img = st.images.find((i) => i.repoPath === st.active);
+      if (!img) {
+        r.pTitle.textContent = "No image selected";
+        r.pImg.removeAttribute("src");
+        r.pMeta.textContent = "";
+        return;
+      }
+      r.pTitle.textContent = img.fileName;
+      r.pImg.src = img.url;
+      r.pImg.alt = img.repoPath;
+      const lines = [];
+      if (img.zoneId) lines.push("Tile: " + img.zoneId);
+      if (img.zoneName) lines.push("Name: " + img.zoneName);
+      if (img.biome) lines.push("Biome: " + img.biome);
+      lines.push("Path: " + img.repoPath);
+      lines.push("Size: " + img.bytes + " bytes");
+      lines.push("Modified: " + new Date(img.mtimeMs).toLocaleString());
+      r.pMeta.textContent = lines.join("\n");
+    }
+
+    function renderImages() {
+      const q = r.imgFilter.value.trim().toLowerCase();
+      const only = r.changedOnly.checked;
+      const vis = st.images.filter((i) => {
+        if (only && !st.changed.has(i.repoPath)) return false;
+        if (!q) return true;
+        const t = (i.repoPath + " " + i.zoneId + " " + i.zoneName + " " + i.biome).toLowerCase();
+        return t.includes(q);
+      });
+      r.grid.innerHTML = "";
+      r.imgCount.textContent = "Images shown: " + vis.length + " / " + st.images.length + " | highlighted: " + st.changed.size;
+      if (!st.active && vis.length) st.active = vis[0].repoPath;
+
+      for (const i of vis) {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "card";
+        if (st.active === i.repoPath) b.classList.add("active");
+        if (st.news.has(i.repoPath)) b.classList.add("new");
+        else if (st.updated.has(i.repoPath)) b.classList.add("updated");
+
+        const im = document.createElement("img");
+        im.src = i.url;
+        im.alt = i.repoPath;
+        b.appendChild(im);
+
+        const n = document.createElement("div");
+        n.className = "name";
+        n.textContent = i.fileName;
+        b.appendChild(n);
+
+        const p = document.createElement("div");
+        p.className = "path";
+        p.textContent = i.repoPath;
+        b.appendChild(p);
+
+        if (st.news.has(i.repoPath) || st.updated.has(i.repoPath)) {
+          const tag = document.createElement("span");
+          tag.className = "badge " + (st.news.has(i.repoPath) ? "new" : "updated");
+          tag.textContent = st.news.has(i.repoPath) ? "NEW" : "UPDATED";
+          b.appendChild(tag);
+        }
+
+        b.onclick = () => { st.active = i.repoPath; renderImages(); renderPreview(); };
+        r.grid.appendChild(b);
+      }
+      if (!vis.length) r.grid.textContent = "No images match filter.";
+      renderPreview();
+    }
+
+    async function refreshImages() {
+      const res = await fetch("/api/images");
+      const data = await res.json();
+      st.images = data.images || [];
+      if (!st.images.find((i) => i.repoPath === st.active)) st.active = st.images.length ? st.images[0].repoPath : "";
+      renderImages();
+    }
+
+    async function load() {
+      const [h, z] = await Promise.all([fetch("/api/health"), fetch("/api/zones")]);
+      const hv = await h.json();
+      const zv = await z.json();
+      st.zones = zv.tiles || [];
+      st.sel = new Set(st.zones.map((z) => z.id));
+      r.key.textContent = hv.keyConfigured ? "API key detected: ready to generate." : "No OPENAI_API_KEY found in env/.env.local/.env.";
+      renderZones();
+      updSel();
+      await refreshImages();
+    }
+
+    async function generate() {
+      const style = r.style.value.trim();
+      if (!style) { r.runStatus.textContent = "Style prompt is required."; return; }
+      const all = r.all.checked;
+      const zoneIds = [...st.sel];
+      if (!all && !zoneIds.length) { r.runStatus.textContent = "Select at least one zone or enable Generate all zones."; return; }
+
+      const payload = {
+        style,
+        all,
+        zoneIds,
+        model: r.model.value.trim(),
+        size: r.size.value,
+        quality: r.quality.value,
+        delayMs: Number.parseInt(r.delay.value || "0", 10),
+        skipExisting: r.skip.checked,
+        dryRun: r.dry.checked
+      };
+
+      r.run.disabled = true;
+      r.runStatus.textContent = "Generation running...";
+      r.out.textContent = "";
+      try {
+        const res = await fetch("/api/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const result = await res.json();
+        st.changed = new Set(result.changedImages || []);
+        st.news = new Set(result.newImages || []);
+        st.updated = new Set(result.updatedImages || []);
+        if (st.changed.size > 0) st.active = [...st.changed][0];
+        await refreshImages();
+        r.runStatus.textContent = (!res.ok || !result.ok)
+          ? "Generation failed."
+          : "Generation completed. Changed images: " + st.changed.size + " (new: " + st.news.size + ", updated: " + st.updated.size + ")";
+        r.out.textContent = [
+          "Exit code: " + result.code,
+          "Duration: " + result.durationMs + " ms",
+          "Changed images: " + (result.changedImages || []).length,
+          "",
+          "Command:",
+          result.command || "",
+          "",
+          "STDOUT:",
+          result.stdout || "",
+          "",
+          "STDERR:",
+          result.stderr || ""
+        ].join("\n");
+      } catch (err) {
+        r.runStatus.textContent = "Request error: " + err.message;
+      } finally {
+        r.run.disabled = false;
+      }
+    }
+
+    r.f.addEventListener("input", renderZones);
+    r.selVis.addEventListener("click", () => {
+      const q = r.f.value.trim().toLowerCase();
+      for (const z of st.zones) if (matchZone(z, q)) st.sel.add(z.id);
+      renderZones();
+      updSel();
+    });
+    r.clrSel.addEventListener("click", () => { st.sel.clear(); renderZones(); updSel(); });
+    r.run.addEventListener("click", generate);
+    r.imgFilter.addEventListener("input", renderImages);
+    r.changedOnly.addEventListener("change", renderImages);
+    r.refresh.addEventListener("click", () => {
+      refreshImages().catch((err) => { r.runStatus.textContent = "Failed to refresh images: " + err.message; });
+    });
+    r.clearHi.addEventListener("click", () => {
+      st.changed.clear();
+      st.news.clear();
+      st.updated.clear();
+      renderImages();
+    });
+    load().catch((err) => { r.key.textContent = "Failed to load UI data: " + err.message; });
+  </script>
+</body>
+</html>

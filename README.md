@@ -152,6 +152,8 @@ GUI behavior:
 - Lets you choose exactly which zone IDs to generate (or toggle "all zones").
 - Applies one shared style prompt across the whole run.
 - Supports `skip existing`, `dry run`, and model/size/quality controls.
+- Includes an image browser for all image files in the repo, with thumbnail + full preview.
+- Highlights images changed by the latest generation run (`NEW` vs `UPDATED`) and supports filtering to changed-only.
 
 ### API Key Safety
 
