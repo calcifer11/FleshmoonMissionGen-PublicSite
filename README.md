@@ -108,6 +108,58 @@ Guidance:
 - Add tags like `objective`, `spawn`, `machine` for objective-area bias.
 - Keep weights higher for common tiles and lower for rare/special tiles.
 
+## Generate Zone Card Art (OpenAI)
+
+Use the batch generator script to create real card art via the OpenAI Images API:
+
+1. Set your API key in your shell session:
+   - PowerShell: `$env:OPENAI_API_KEY="your_api_key_here"`
+   - Or place it in `.env.local` as: `OPENAI_API_KEY=your_api_key_here`
+2. Run the script with:
+   - a shared style prompt (`--style` or `--style-file`)
+   - a scope (`--zones`, `--zones-file`, `--biomes`, or `--all`)
+
+Script:
+
+- `scripts/generate-zone-cards-openai.mjs`
+
+Examples:
+
+- Generate two specific cards with one shared style:
+  - `node scripts/generate-zone-cards-openai.mjs --zones PumpControl,OverflowJunction --style "grimdark biopunk city infrastructure, painterly realism, wet concrete, cinematic practical lighting"`
+- Generate all `labs` + `transit` cards, reusing a saved style prompt:
+  - `node scripts/generate-zone-cards-openai.mjs --biomes labs,transit --style-file scripts/style-prompts/base-style.txt`
+- Generate every zone card (explicit full run):
+  - `node scripts/generate-zone-cards-openai.mjs --all --style-file scripts/style-prompts/base-style.txt`
+- Preview without API calls:
+  - `node scripts/generate-zone-cards-openai.mjs --zones PumpControl --style-file scripts/style-prompts/base-style.txt --dry-run`
+
+Useful options:
+
+- `--skip-existing` to keep existing PNG files untouched.
+- `--delay-ms 500` to wait between requests.
+- `--model`, `--size`, and `--quality` to tune output settings.
+
+### Local GUI
+
+Launch a local-only GUI that wraps the same generator script:
+
+- `node scripts/zone-card-generator-ui.mjs`
+- Open `http://127.0.0.1:4177`
+
+GUI behavior:
+
+- Lets you choose exactly which zone IDs to generate (or toggle "all zones").
+- Applies one shared style prompt across the whole run.
+- Supports `skip existing`, `dry run`, and model/size/quality controls.
+
+### API Key Safety
+
+- This repo now ignores `.env` and `.env.local` via `.gitignore`.
+- Keep your key in environment variables or in `.env.local` only.
+- Do not commit key files or paste live keys into tracked files (README, scripts, JSON).
+- The GUI runs on `127.0.0.1` and calls OpenAI from the local Node process, so the key stays server-side.
+
 ## PoC Mode
 
 `app.js` includes `POC_MODE = true` for limited tile pools.
