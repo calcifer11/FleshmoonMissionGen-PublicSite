@@ -116,7 +116,7 @@ Use the batch generator script to create real card art via the OpenAI Images API
    - PowerShell: `$env:OPENAI_API_KEY="your_api_key_here"`
    - Or place it in `.env.local` as: `OPENAI_API_KEY=your_api_key_here`
 2. Run the script with:
-   - a shared style prompt (`--style` or `--style-file`)
+   - an optional shared extra description (`--extra-description`, `--style`, or `--style-file`)
    - a scope (`--zones`, `--zones-file`, `--biomes`, or `--all`)
 
 Script:
@@ -125,10 +125,10 @@ Script:
 
 Examples:
 
-- Generate two specific cards with one shared style:
-  - `node scripts/generate-zone-cards-openai.mjs --zones PumpControl,OverflowJunction --style "grimdark biopunk city infrastructure, painterly realism, wet concrete, cinematic practical lighting"`
-- Generate all `labs` + `transit` cards, reusing a saved style prompt:
-  - `node scripts/generate-zone-cards-openai.mjs --biomes labs,transit --style-file scripts/style-prompts/base-style.txt`
+- Generate two specific cards with one shared extra-description:
+  - `node scripts/generate-zone-cards-openai.mjs --zones PumpControl,OverflowJunction --extra-description "grimdark biopunk city infrastructure, painterly realism, wet concrete, cinematic practical lighting"`
+- Generate all `research` + `transit` cards, reusing a saved extra-description file:
+  - `node scripts/generate-zone-cards-openai.mjs --biomes research,transit --style-file scripts/style-prompts/base-style.txt`
 - Generate every zone card (explicit full run):
   - `node scripts/generate-zone-cards-openai.mjs --all --style-file scripts/style-prompts/base-style.txt`
 - Preview without API calls:
@@ -140,6 +140,21 @@ Useful options:
 - `--delay-ms 500` to wait between requests.
 - `--model`, `--size`, and `--quality` to tune output settings.
 
+### Overwrite Backups (Google Drive)
+
+When generation overwrites an existing zone card image, the previous version is automatically backed up to Google Drive before writing the new file.
+
+- Default backup root:
+  - `/Users/weaver/Library/CloudStorage/GoogleDrive-hubbabubba.awesome@gmail.com/My Drive/FLESHMOON/2.0/ZoneCards`
+- Per-biome backup location:
+  - `<backup root>/<BiomeFolder>/old/`
+  - Biome folders follow existing output naming (`Sewers`, `Urban-Industrial`, `Transit`, `Civic`, `Labs`, `Outskirts`).
+- Backup filename pattern:
+  - `<ZoneCardId>_old_<x>.png`
+  - `x` auto-increments (`1, 2, 3...`) so backups never overwrite each other.
+- Optional override:
+  - Set `ZONECARD_BACKUP_ROOT` to change the backup root path.
+
 ### Local GUI
 
 Launch a local-only GUI that wraps the same generator script:
@@ -150,7 +165,8 @@ Launch a local-only GUI that wraps the same generator script:
 GUI behavior:
 
 - Lets you choose exactly which zone IDs to generate (or toggle "all zones").
-- Applies one shared style prompt across the whole run.
+- Biome dropdown auto-fills a style-only default prompt template.
+- Final generation prompt is built per tile biome as default style + `Specific scene: <Zone Name>` + optional extra description.
 - Supports `skip existing`, `dry run`, and model/size/quality controls.
 - Includes an image browser for all image files in the repo, with thumbnail + full preview.
 - Highlights images changed by the latest generation run (`NEW` vs `UPDATED`) and supports filtering to changed-only.

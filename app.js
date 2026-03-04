@@ -42,10 +42,27 @@ const ZONECARD_IMAGE_LIBRARY = {
     "ZoneCards/Urban-Industrial/TrashHeaps.png"
   ]
 };
+const BIOME_KEY_ALIASES = {
+  civic: "residential",
+  labs: "research",
+  outskirts: "perimeter"
+};
+const BIOME_DISPLAY_NAMES = {
+  sewers: "Sewers",
+  industrial: "Industrial",
+  transit: "Transit",
+  residential: "Residential",
+  research: "Research",
+  perimeter: "Perimeter Zone",
+  unknown: "Unknown"
+};
 const BIOME_ART_THEME = {
   sewers: "sewers",
   industrial: "urbanIndustrial",
   transit: "urbanIndustrial",
+  residential: "urbanIndustrial",
+  research: "urbanIndustrial",
+  perimeter: "urbanIndustrial",
   civic: "urbanIndustrial",
   labs: "urbanIndustrial",
   outskirts: "urbanIndustrial",
@@ -435,19 +452,22 @@ function normalizeZones(raw) {
   if (!Array.isArray(tileList)) throw new Error("Invalid zones JSON: expected array or { tiles: [] }");
 
   return {
-    tiles: tileList.map((tile) => ({
-      id: String(tile.id),
-      name: String(tile.name || tile.id),
-      biome: String(tile.biome || "unknown"),
-      tags: Array.isArray(tile.tags) ? tile.tags.map((tag) => String(tag)) : [],
-      weight: Number(tile.weight || 1),
-      image: resolveZoneTileImage({
+    tiles: tileList.map((tile) => {
+      const biome = canonicalBiomeKey(tile.biome);
+      return {
         id: String(tile.id),
         name: String(tile.name || tile.id),
-        biome: String(tile.biome || "unknown"),
-        image: tile.image ? String(tile.image) : ""
-      })
-    }))
+        biome,
+        tags: Array.isArray(tile.tags) ? tile.tags.map((tag) => String(tag)) : [],
+        weight: Number(tile.weight || 1),
+        image: resolveZoneTileImage({
+          id: String(tile.id),
+          name: String(tile.name || tile.id),
+          biome,
+          image: tile.image ? String(tile.image) : ""
+        })
+      };
+    })
   };
 }
 
@@ -465,16 +485,27 @@ function resolveZoneTileImage(tile) {
     return ZONECARD_IMAGE_TOKEN_MAP.get(nameToken) || "";
   }
 
-  const themeKey = BIOME_ART_THEME[tile.biome] || BIOME_ART_THEME.unknown;
+  const biomeKey = canonicalBiomeKey(tile.biome);
+  const themeKey = BIOME_ART_THEME[biomeKey] || BIOME_ART_THEME.unknown;
   const fallbackPool = ZONECARD_IMAGE_LIBRARY[themeKey] || ZONECARD_IMAGE_PATHS;
   if (fallbackPool.length === 0) return "";
 
-  const fallbackIndex = hashSeed(`${tile.id}:${tile.biome}`) % fallbackPool.length;
+  const fallbackIndex = hashSeed(`${tile.id}:${biomeKey}`) % fallbackPool.length;
   return fallbackPool[fallbackIndex];
 }
 
 function normalizeAssetPath(path) {
   return String(path || "").replaceAll("\\", "/").trim();
+}
+
+function canonicalBiomeKey(value) {
+  const key = String(value || "unknown").trim().toLowerCase() || "unknown";
+  return BIOME_KEY_ALIASES[key] || key;
+}
+
+function biomeDisplayName(value) {
+  const key = canonicalBiomeKey(value);
+  return BIOME_DISPLAY_NAMES[key] || key.replace(/[_-]+/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase());
 }
 
 function toAssetUrl(path) {
@@ -605,7 +636,7 @@ function normalizeCustomRoomTile(raw) {
   const id = String(raw.id || buildCustomRoomTileId(name)).trim();
   if (!id) return null;
 
-  const biome = String(raw.biome || "unknown").trim() || "unknown";
+  const biome = canonicalBiomeKey(raw.biome);
   const tags = parseTagInput(raw.tags);
   const image = resolveZoneTileImage({
     id,
@@ -640,8 +671,8 @@ function findEditableRoomTileById(tileId) {
 
 function getRoomLibraryBiomes() {
   const biomeSet = new Set();
-  (state.zones?.tiles || []).forEach((tile) => biomeSet.add(tile.biome || "unknown"));
-  (state.roomLibrary.customTiles || []).forEach((tile) => biomeSet.add(tile.biome || "unknown"));
+  (state.zones?.tiles || []).forEach((tile) => biomeSet.add(canonicalBiomeKey(tile.biome)));
+  (state.roomLibrary.customTiles || []).forEach((tile) => biomeSet.add(canonicalBiomeKey(tile.biome)));
   if (biomeSet.size === 0) biomeSet.add("unknown");
   return Array.from(biomeSet).sort((a, b) => a.localeCompare(b));
 }
@@ -4031,7 +4062,7 @@ function renderMapCardMenuOptions(targetCell = null) {
   biomeOptions.forEach((biome) => {
     const option = document.createElement("option");
     option.value = biome;
-    option.textContent = biome.replace(/[_-]+/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase());
+    option.textContent = biomeDisplayName(biome);
     biomeSelect.appendChild(option);
   });
 
@@ -4085,9 +4116,7 @@ function renderMapCardMenuOptions(targetCell = null) {
 
       const label = document.createElement("p");
       label.className = "map-card-menu-group-label";
-      label.textContent = tile.biome
-        .replace(/[_-]+/g, " ")
-        .replace(/\b\w/g, (ch) => ch.toUpperCase());
+      label.textContent = biomeDisplayName(tile.biome);
       currentGroup.appendChild(label);
       refs.mapCardMenuList.appendChild(currentGroup);
     }
@@ -4100,7 +4129,7 @@ function renderMapCardMenuOptions(targetCell = null) {
     option.className = "map-card-menu-option map-card-menu-option-main";
     option.dataset.tileId = tile.id;
     option.textContent = tile.isCustom ? `${tile.name} (Custom)` : tile.name;
-    option.title = `${tile.name} (${tile.biome})`;
+    option.title = `${tile.name} (${biomeDisplayName(tile.biome)})`;
 
     const deleteButton = document.createElement("button");
     deleteButton.type = "button";
@@ -4180,7 +4209,7 @@ function renderMap() {
     if (cell.isCorridor) {
       tileMeta.textContent = "corridor";
     } else {
-      tileMeta.textContent = cell.isVariation ? "variation" : (cell.biome || "-");
+      tileMeta.textContent = cell.isVariation ? "variation" : (cell.biome ? biomeDisplayName(cell.biome) : "-");
     }
 
     const roleMeta = document.createElement("span");

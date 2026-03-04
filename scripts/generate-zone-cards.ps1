@@ -17,6 +17,9 @@ function Get-FolderNameForBiome {
     "sewers" { return "Sewers" }
     "industrial" { return "Urban-Industrial" }
     "transit" { return "Transit" }
+    "residential" { return "Civic" }
+    "research" { return "Labs" }
+    "perimeter" { return "Outskirts" }
     "civic" { return "Civic" }
     "labs" { return "Labs" }
     "outskirts" { return "Outskirts" }
@@ -31,6 +34,9 @@ function Get-BiomeColors {
     "sewers" { return @{ A = "#0C352E"; B = "#1A6B58"; Accent = "#9BE7C4" } }
     "industrial" { return @{ A = "#2D2F33"; B = "#54595F"; Accent = "#F6B463" } }
     "transit" { return @{ A = "#1C2735"; B = "#36506E"; Accent = "#9AD1FF" } }
+    "residential" { return @{ A = "#2E2433"; B = "#5E4A66"; Accent = "#F3B6D6" } }
+    "research" { return @{ A = "#162B2A"; B = "#2A6561"; Accent = "#A9FFF7" } }
+    "perimeter" { return @{ A = "#2E3220"; B = "#59653A"; Accent = "#E9E6A1" } }
     "civic" { return @{ A = "#2E2433"; B = "#5E4A66"; Accent = "#F3B6D6" } }
     "labs" { return @{ A = "#162B2A"; B = "#2A6561"; Accent = "#A9FFF7" } }
     "outskirts" { return @{ A = "#2E3220"; B = "#59653A"; Accent = "#E9E6A1" } }

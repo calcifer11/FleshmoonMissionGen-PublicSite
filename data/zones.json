@@ -17,7 +17,8 @@
         "mid-fight",
         "hazard"
       ],
-      "intensityLevel": 2
+      "intensityLevel": 2,
+      "promptHint": "ankle-deep murky water, floating debris, rippling reflections under sickly industrial light"
     },
     {
       "id": "InfestedTunnels",
@@ -37,7 +38,8 @@
         "mid-fight",
         "hazard"
       ],
-      "intensityLevel": 3
+      "intensityLevel": 3,
+      "promptHint": "organic residue on concrete, gnawed piping, scattered chitin fragments, damp haze"
     },
     {
       "id": "SewerBarricades",
@@ -56,7 +58,8 @@
         "mid-fight",
         "defensive"
       ],
-      "intensityLevel": 2
+      "intensityLevel": 2,
+      "promptHint": "improvised barriers of scrap and pallets, caution tape, muddy footprints, weak flashlight glow"
     },
     {
       "id": "FiltrationNode",
@@ -75,7 +78,8 @@
         "defensive",
         "mid-fight"
       ],
-      "intensityLevel": 2
+      "intensityLevel": 2,
+      "promptHint": "filter drums and mesh screens, dripping runoff, indicator LEDs, gritty spray on metal"
     },
     {
       "id": "SpawningPools",
@@ -96,7 +100,8 @@
         "mid-fight",
         "hazard"
       ],
-      "intensityLevel": 3
+      "intensityLevel": 3,
+      "promptHint": "still black pools, slimy edges, faint bioluminescent sheen, unsettling bubbles"
     },
     {
       "id": "PumpControl",
@@ -114,7 +119,8 @@
         "defensive"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Sewers/PumpControl.png"
+      "image": "ZoneCards/Sewers/PumpControl.png",
+      "promptHint": "rusted valve wheels, pressure gauges, blinking control panel lights, steam from a leaking joint"
     },
     {
       "id": "OverflowJunction",
@@ -132,7 +138,8 @@
         "hazard"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Sewers/OverflowJunction.png"
+      "image": "ZoneCards/Sewers/OverflowJunction.png",
+      "promptHint": "multiple pipe outlets, turbulent runoff, warning-striped catwalk metal, misty splash"
     },
     {
       "id": "DrainageCathedral",
@@ -151,7 +158,8 @@
         "hazard"
       ],
       "intensityLevel": 3,
-      "image": "ZoneCards/Sewers/DrainageCathedral.png"
+      "image": "ZoneCards/Sewers/DrainageCathedral.png",
+      "promptHint": "vast culvert arches, wet stone-like concrete, candle wax drips, distant echoing darkness"
     },
     {
       "id": "FactoryFloor",
@@ -170,7 +178,8 @@
         "mid-fight"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Urban-Industrial/FactoryFloor.png"
+      "image": "ZoneCards/Urban-Industrial/FactoryFloor.png",
+      "promptHint": "oil-stained concrete, hanging chains, scattered tools, harsh overhead work lights and deep shadows"
     },
     {
       "id": "MaintenanceBay",
@@ -189,7 +198,8 @@
         "mid-fight"
       ],
       "intensityLevel": 1,
-      "image": "ZoneCards/Urban-Industrial/MaintenanceBay.png"
+      "image": "ZoneCards/Urban-Industrial/MaintenanceBay.png",
+      "promptHint": "service pit markings, hydraulic lift arms, spare parts shelves, grease smears and dim task lighting"
     },
     {
       "id": "ControlRoom",
@@ -208,7 +218,8 @@
         "defensive",
         "mid-fight"
       ],
-      "intensityLevel": 2
+      "intensityLevel": 2,
+      "promptHint": "glowing monitors, shattered glass, cable bundles, emergency backup lights reflecting off panels"
     },
     {
       "id": "AssemblyLine",
@@ -227,7 +238,8 @@
         "hazard"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Urban-Industrial/AssemblyLine.png"
+      "image": "ZoneCards/Urban-Industrial/AssemblyLine.png",
+      "promptHint": "conveyor segments and rollers, boxed components, warning beacons, drifting dust in light shafts"
     },
     {
       "id": "CoolantChannels",
@@ -245,7 +257,8 @@
         "hazard"
       ],
       "intensityLevel": 3,
-      "image": "ZoneCards/Urban-Industrial/CoolantChannels.png"
+      "image": "ZoneCards/Urban-Industrial/CoolantChannels.png",
+      "promptHint": "coolant spill sheen, frosty vapor, corroded grates, cold blue light over damp metal"
     },
     {
       "id": "ArcanoidFoundry",
@@ -265,7 +278,8 @@
         "hazard"
       ],
       "intensityLevel": 3,
-      "image": "ZoneCards/Urban-Industrial/ArcanoidFoundry.png"
+      "image": "ZoneCards/Urban-Industrial/ArcanoidFoundry.png",
+      "promptHint": "molten glow behind shutters, stamped metal parts, heavy chains, heat haze in the air"
     },
     {
       "id": "ScrapConcourse",
@@ -284,7 +298,8 @@
         "hazard"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Urban-Industrial/ScrapConcourse.png"
+      "image": "ZoneCards/Urban-Industrial/ScrapConcourse.png",
+      "promptHint": "piles of twisted scrap, jagged silhouettes, sparks from a live cable, smoky particulate haze"
     },
     {
       "id": "ReactorAccess",
@@ -304,7 +319,8 @@
         "hazard"
       ],
       "intensityLevel": 3,
-      "image": "ZoneCards/Urban-Industrial/ReactorAccess.png"
+      "image": "ZoneCards/Urban-Industrial/ReactorAccess.png",
+      "promptHint": "thick radiation doors (no readable signs), heat shimmer, red emergency strobes, humming conduits"
     },
     {
       "id": "SubwayPlatform",
@@ -323,7 +339,8 @@
         "mid-fight"
       ],
       "intensityLevel": 1,
-      "image": "ZoneCards/Transit/SubwayPlatform.png"
+      "image": "ZoneCards/Transit/SubwayPlatform.png",
+      "promptHint": "platform edge grit, cracked tiles, abandoned bag, flickering fluorescents and distant tunnel rumble"
     },
     {
       "id": "ServiceTunnels",
@@ -341,7 +358,8 @@
         "connector"
       ],
       "intensityLevel": 1,
-      "image": "ZoneCards/Transit/ServiceTunnels.png"
+      "image": "ZoneCards/Transit/ServiceTunnels.png",
+      "promptHint": "utility cables and junction boxes, damp concrete, loose bolts, low amber maintenance lights"
     },
     {
       "id": "RailSwitchYard",
@@ -360,7 +378,8 @@
         "mid-fight"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Transit/RailSwitchYard.png"
+      "image": "ZoneCards/Transit/RailSwitchYard.png",
+      "promptHint": "switch levers and track hardware, signal lights glow, oily ballast stones, metallic dust"
     },
     {
       "id": "MaglevDepot",
@@ -378,7 +397,8 @@
         "mid-fight"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Transit/MaglevDepot.png"
+      "image": "ZoneCards/Transit/MaglevDepot.png",
+      "promptHint": "sleek rail housing, maintenance gantries, scattered crates, cold white light with soft haze"
     },
     {
       "id": "SignalTower",
@@ -397,7 +417,8 @@
         "defensive"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Transit/SignalTower.png"
+      "image": "ZoneCards/Transit/SignalTower.png",
+      "promptHint": "exterior catwalk and ladder silhouette, sweeping floodlight beam, windblown grit, skyline haze"
     },
     {
       "id": "TicketConcourse",
@@ -416,12 +437,13 @@
         "mid-fight"
       ],
       "intensityLevel": 1,
-      "image": "ZoneCards/Transit/TicketConcourse.png"
+      "image": "ZoneCards/Transit/TicketConcourse.png",
+      "promptHint": "shattered turnstiles, scattered paper tickets, toppled kiosk silhouette, harsh fluorescent flicker"
     },
     {
       "id": "ApartmentStacks",
       "name": "Apartment Stacks",
-      "biome": "civic",
+      "biome": "residential",
       "weight": 4,
       "tags": [
         "urban",
@@ -433,12 +455,13 @@
         "mid-fight"
       ],
       "intensityLevel": 1,
-      "image": "ZoneCards/Civic/ApartmentStacks.png"
+      "image": "ZoneCards/Civic/ApartmentStacks.png",
+      "promptHint": "mailboxes and door frames (no readable numbers), kids’ toy left behind, stale warm light"
     },
     {
       "id": "PublicSchoolWing",
       "name": "Public School Wing",
-      "biome": "civic",
+      "biome": "residential",
       "weight": 3,
       "tags": [
         "urban",
@@ -450,12 +473,13 @@
         "connector"
       ],
       "intensityLevel": 1,
-      "image": "ZoneCards/Civic/PublicSchoolWing.png"
+      "image": "ZoneCards/Civic/PublicSchoolWing.png",
+      "promptHint": "wide hallway with lockers (no readable labels), scattered notebooks, dull daylight through dusty windows"
     },
     {
       "id": "ArchiveVault",
       "name": "Archive Vault",
-      "biome": "civic",
+      "biome": "residential",
       "weight": 2,
       "tags": [
         "urban",
@@ -469,12 +493,13 @@
         "defensive"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Civic/ArchiveVault.png"
+      "image": "ZoneCards/Civic/ArchiveVault.png",
+      "promptHint": "shelving silhouettes and storage crates, paper drift on floor, cold lamplight and heavy quiet"
     },
     {
       "id": "HospitalWard",
       "name": "Hospital Ward",
-      "biome": "civic",
+      "biome": "residential",
       "weight": 2,
       "tags": [
         "urban",
@@ -487,12 +512,13 @@
         "hazard"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Civic/HospitalWard.png"
+      "image": "ZoneCards/Civic/HospitalWard.png",
+      "promptHint": "privacy curtains, toppled IV stand, sterile sheets, faint monitor glow without readable screens"
     },
     {
       "id": "CourthouseAnnex",
       "name": "Courthouse Annex",
-      "biome": "civic",
+      "biome": "residential",
       "weight": 2,
       "tags": [
         "urban",
@@ -505,12 +531,13 @@
         "mid-fight"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Civic/CourthouseAnnex.png"
+      "image": "ZoneCards/Civic/CourthouseAnnex.png",
+      "promptHint": "stone or concrete civic interior, broken benches, scattered case folders, austere lighting and dust"
     },
     {
       "id": "RefugeeMarket",
       "name": "Refugee Market",
-      "biome": "civic",
+      "biome": "residential",
       "weight": 2,
       "tags": [
         "urban",
@@ -524,12 +551,13 @@
         "hazard"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Civic/RefugeeMarket.png"
+      "image": "ZoneCards/Civic/RefugeeMarket.png",
+      "promptHint": "makeshift stalls and tarps, abandoned crates and blankets, lantern glow, cluttered ground debris"
     },
     {
       "id": "EvacCheckpoint",
       "name": "Evac Checkpoint",
-      "biome": "civic",
+      "biome": "residential",
       "weight": 2,
       "tags": [
         "urban",
@@ -544,12 +572,13 @@
         "start-ok"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Civic/EvacCheckpoint.png"
+      "image": "ZoneCards/Civic/EvacCheckpoint.png",
+      "promptHint": "portable barriers and cones, luggage pile silhouette, searchlight glare through mist, wet asphalt"
     },
     {
       "id": "BiolabCorridor",
       "name": "Biolab Corridor",
-      "biome": "labs",
+      "biome": "research",
       "weight": 3,
       "tags": [
         "lab",
@@ -562,12 +591,13 @@
         "connector"
       ],
       "intensityLevel": 1,
-      "image": "ZoneCards/Labs/BiolabCorridor.png"
+      "image": "ZoneCards/Labs/BiolabCorridor.png",
+      "promptHint": "sealed paneling, floor drain grates, cool white lighting, faint condensation near vents"
     },
     {
       "id": "QuarantineLab",
       "name": "Quarantine Lab",
-      "biome": "labs",
+      "biome": "research",
       "weight": 2,
       "tags": [
         "lab",
@@ -581,12 +611,13 @@
         "hazard"
       ],
       "intensityLevel": 3,
-      "image": "ZoneCards/Labs/QuarantineLab.png"
+      "image": "ZoneCards/Labs/QuarantineLab.png",
+      "promptHint": "cleanup foam residue, sealed door seams, scattered sample containers, red alarm glow diffused"
     },
     {
       "id": "CryoStorage",
       "name": "Cryo Storage",
-      "biome": "labs",
+      "biome": "research",
       "weight": 2,
       "tags": [
         "lab",
@@ -599,12 +630,13 @@
         "mid-fight"
       ],
       "intensityLevel": 1,
-      "image": "ZoneCards/Labs/CryoStorage.png"
+      "image": "ZoneCards/Labs/CryoStorage.png",
+      "promptHint": "frosted pipes, ice crystals, pale blue chill light, thin vapor drifting at floor level"
     },
     {
       "id": "NodeServerVault",
       "name": "Node Server Vault",
-      "biome": "labs",
+      "biome": "research",
       "weight": 2,
       "tags": [
         "lab",
@@ -618,12 +650,13 @@
         "defensive"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Labs/NodeServerVault.png"
+      "image": "ZoneCards/Labs/NodeServerVault.png",
+      "promptHint": "server rack silhouettes, blinking status LEDs, cable trays, cool airflow haze and reflections"
     },
     {
       "id": "ContainmentChamber",
       "name": "Containment Chamber",
-      "biome": "labs",
+      "biome": "research",
       "weight": 1,
       "tags": [
         "lab",
@@ -638,12 +671,13 @@
         "defensive"
       ],
       "intensityLevel": 3,
-      "image": "ZoneCards/Labs/ContainmentChamber.png"
+      "image": "ZoneCards/Labs/ContainmentChamber.png",
+      "promptHint": "thick glass partitions, restraint frame silhouette, dust motes in a hard light beam"
     },
     {
       "id": "SpecimenTheater",
       "name": "Specimen Theater",
-      "biome": "labs",
+      "biome": "research",
       "weight": 1,
       "tags": [
         "lab",
@@ -657,12 +691,13 @@
         "hazard"
       ],
       "intensityLevel": 3,
-      "image": "ZoneCards/Labs/SpecimenTheater.png"
+      "image": "ZoneCards/Labs/SpecimenTheater.png",
+      "promptHint": "surgical lamps, stainless tables, stained floor drains, clinical glare with ominous shadow pockets"
     },
     {
       "id": "StormDrainPlaza",
       "name": "Storm-Drain Plaza",
-      "biome": "outskirts",
+      "biome": "perimeter",
       "weight": 2,
       "tags": [
         "outdoor",
@@ -676,12 +711,13 @@
         "hazard"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Outskirts/StormDrainPlaza.png"
+      "image": "ZoneCards/Outskirts/StormDrainPlaza.png",
+      "promptHint": "street runoff grates, puddles reflecting sodium light, windblown litter, distant siren glow"
     },
     {
       "id": "CargoDrydock",
       "name": "Cargo Drydock",
-      "biome": "outskirts",
+      "biome": "perimeter",
       "weight": 2,
       "tags": [
         "outdoor",
@@ -695,12 +731,13 @@
         "mid-fight"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Outskirts/CargoDrydock.png"
+      "image": "ZoneCards/Outskirts/CargoDrydock.png",
+      "promptHint": "stacked containers, crane silhouette, torn tarpaulin flapping, foggy floodlights on wet ground"
     },
     {
       "id": "PerimeterGate",
       "name": "Perimeter Gate",
-      "biome": "outskirts",
+      "biome": "perimeter",
       "weight": 2,
       "tags": [
         "outdoor",
@@ -716,7 +753,8 @@
         "defensive"
       ],
       "intensityLevel": 2,
-      "image": "ZoneCards/Outskirts/PerimeterGate.png"
+      "image": "ZoneCards/Outskirts/PerimeterGate.png",
+      "promptHint": "chain-link gate and jersey barriers, razor wire silhouette, searchlight glare, drifting dust"
     }
   ]
 }

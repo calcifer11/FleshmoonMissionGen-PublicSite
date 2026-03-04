@@ -20,6 +20,7 @@
       color: #e8edf6;
     }
     textarea { min-height: 90px; resize: vertical; }
+    textarea.small { min-height: 56px; }
     button {
       padding: 7px 10px;
       border: 1px solid #516580;
@@ -85,7 +86,18 @@
 
       <section class="panel">
         <h2>Generation</h2>
-        <label>Common style prompt<textarea id="style"></textarea></label>
+        <label>Biome
+          <select id="biome">
+            <option value="sewers">Sewers</option>
+            <option value="industrial">Industrial</option>
+            <option value="transit">Transit</option>
+            <option value="residential">Residential</option>
+            <option value="research">Research</option>
+            <option value="perimeter">Perimeter Zone</option>
+          </select>
+        </label>
+        <label>Prompt input<textarea id="promptInput"></textarea></label>
+        <label>Generation-specific extra text<textarea id="extraDesc" class="small" placeholder="Optional. Appended after zone name and prompt hint for this run."></textarea></label>
         <div class="row">
           <label>Model<input id="model" type="text" value="gpt-image-1"></label>
           <label>Size
@@ -137,6 +149,39 @@
   </div>
 
   <script>
+    const BIOME_KEY_ALIASES = {
+      civic: "residential",
+      labs: "research",
+      outskirts: "perimeter"
+    };
+    const BIOME_DISPLAY_NAMES = {
+      sewers: "Sewers",
+      industrial: "Industrial",
+      transit: "Transit",
+      residential: "Residential",
+      research: "Research",
+      perimeter: "Perimeter Zone",
+      unknown: "Unknown"
+    };
+    const DEFAULT_PROMPTS = {
+      sewers: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, grounded subterranean infrastructure aesthetic, damp concrete and aged metal materials, wet reflective surfaces, utilitarian construction, low industrial lighting tones, subtle humidity/mist in the air, moody but not fantastical, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens.",
+      industrial: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, heavy mechanical architecture, exposed steel structures, large-scale industrial forms, strong geometric silhouettes, cold industrial lighting with occasional warm mechanical glow, oil-stained worn surfaces, utilitarian machine-district design language, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens.",
+      transit: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, urban transit infrastructure aesthetic, concrete/steel/tile material language, linear civic engineering forms, grounded metropolitan atmosphere, practical city lighting, subtle dust in air, tense but not occult-decorated, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens.",
+      residential: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, lived-in urban residential/civic architecture, human-scale spaces, domestic materials (drywall, brick, worn tile, scuffed paint, carpet), practical interior lighting or soft window light, grounded atmosphere of abandonment, NO arcane symbols/occult motifs unless explicitly specified by the zone name/description, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens.",
+      research: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, sterile high-security research facility aesthetic, clean institutional materials (sealed panels, reinforced surfaces, glass when appropriate), controlled lighting in cool whites/blues with subtle red emergency accents, clinical and structured tone without decorative symbolism, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens.",
+      perimeter: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, outdoor fortified containment aesthetic, concrete barriers/fencing/asphalt/gravel material language, open spatial feel, cold floodlighting or harsh environmental lighting, wind/haze/dust in atmosphere, grounded military quarantine tone, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens."
+    };
+
+    function normalizeBiomeKey(v) {
+      const key = String(v || "unknown").trim().toLowerCase() || "unknown";
+      return BIOME_KEY_ALIASES[key] || key;
+    }
+
+    function biomeDisplayName(v) {
+      const key = normalizeBiomeKey(v);
+      return BIOME_DISPLAY_NAMES[key] || key.replace(/[_-]+/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase());
+    }
+
     const st = { zones: [], sel: new Set(), images: [], changed: new Set(), news: new Set(), updated: new Set(), active: "" };
     const r = {
       key: document.getElementById("keyStatus"),
@@ -146,7 +191,9 @@
       clrSel: document.getElementById("clrSel"),
       zones: document.getElementById("zones"),
       selCount: document.getElementById("selCount"),
-      style: document.getElementById("style"),
+      biome: document.getElementById("biome"),
+      promptInput: document.getElementById("promptInput"),
+      extraDesc: document.getElementById("extraDesc"),
       model: document.getElementById("model"),
       size: document.getElementById("size"),
       quality: document.getElementById("quality"),
@@ -169,7 +216,7 @@
 
     function matchZone(z, q) {
       if (!q) return true;
-      const t = (z.id + " " + z.name + " " + z.biome).toLowerCase();
+      const t = (z.id + " " + z.name + " " + z.biome + " " + biomeDisplayName(z.biome)).toLowerCase();
       return t.includes(q);
     }
 
@@ -180,6 +227,12 @@
         m.get(z.biome).push(z);
       }
       return [...m.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+    }
+
+    function applyBiomeDefaultPrompt() {
+      const biomeKey = normalizeBiomeKey(r.biome.value);
+      r.biome.value = biomeKey;
+      r.promptInput.value = DEFAULT_PROMPTS[biomeKey] || "";
     }
 
     function renderZones() {
@@ -193,7 +246,7 @@
         h.style.display = "flex";
         h.style.justifyContent = "space-between";
         const title = document.createElement("strong");
-        title.textContent = biome + " (" + tiles.length + ")";
+        title.textContent = biomeDisplayName(biome) + " (" + tiles.length + ")";
         h.appendChild(title);
         const controls = document.createElement("div");
         const s = document.createElement("button");
@@ -250,7 +303,7 @@
       const lines = [];
       if (img.zoneId) lines.push("Tile: " + img.zoneId);
       if (img.zoneName) lines.push("Name: " + img.zoneName);
-      if (img.biome) lines.push("Biome: " + img.biome);
+      if (img.biome) lines.push("Biome: " + biomeDisplayName(img.biome));
       lines.push("Path: " + img.repoPath);
       lines.push("Size: " + img.bytes + " bytes");
       lines.push("Modified: " + new Date(img.mtimeMs).toLocaleString());
@@ -263,7 +316,7 @@
       const vis = st.images.filter((i) => {
         if (only && !st.changed.has(i.repoPath)) return false;
         if (!q) return true;
-        const t = (i.repoPath + " " + i.zoneId + " " + i.zoneName + " " + i.biome).toLowerCase();
+        const t = (i.repoPath + " " + i.zoneId + " " + i.zoneName + " " + i.biome + " " + biomeDisplayName(i.biome)).toLowerCase();
         return t.includes(q);
       });
       r.grid.innerHTML = "";
@@ -319,23 +372,23 @@
       const [h, z] = await Promise.all([fetch("/api/health"), fetch("/api/zones")]);
       const hv = await h.json();
       const zv = await z.json();
-      st.zones = zv.tiles || [];
+      st.zones = (zv.tiles || []).map((zone) => ({ ...zone, biome: normalizeBiomeKey(zone.biome) }));
       st.sel = new Set(st.zones.map((z) => z.id));
       r.key.textContent = hv.keyConfigured ? "API key detected: ready to generate." : "No OPENAI_API_KEY found in env/.env.local/.env.";
+      applyBiomeDefaultPrompt();
       renderZones();
       updSel();
       await refreshImages();
     }
 
     async function generate() {
-      const style = r.style.value.trim();
-      if (!style) { r.runStatus.textContent = "Style prompt is required."; return; }
+      const userExtraDescription = r.extraDesc.value.trim();
       const all = r.all.checked;
       const zoneIds = [...st.sel];
       if (!all && !zoneIds.length) { r.runStatus.textContent = "Select at least one zone or enable Generate all zones."; return; }
 
       const payload = {
-        style,
+        userExtraDescription,
         all,
         zoneIds,
         model: r.model.value.trim(),
@@ -386,6 +439,7 @@
     }
 
     r.f.addEventListener("input", renderZones);
+    r.biome.addEventListener("change", applyBiomeDefaultPrompt);
     r.selVis.addEventListener("click", () => {
       const q = r.f.value.trim().toLowerCase();
       for (const z of st.zones) if (matchZone(z, q)) st.sel.add(z.id);

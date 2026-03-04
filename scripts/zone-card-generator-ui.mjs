@@ -13,11 +13,21 @@ const GENERATOR = path.resolve(ROOT, "scripts/generate-zone-cards-openai.mjs");
 const PAGE_PATH = path.resolve(ROOT, "scripts/zone-card-generator-ui.html");
 const IMAGE_EXTS = new Set([".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp"]);
 const SKIP_DIRS = new Set([".git", "node_modules"]);
+const BIOME_KEY_ALIASES = {
+  civic: "residential",
+  labs: "research",
+  outskirts: "perimeter"
+};
 
 let generating = false;
 
 function normalizePath(v) {
   return String(v || "").replaceAll("\\", "/").trim();
+}
+
+function normalizeBiomeKey(v) {
+  const key = String(v || "unknown").trim().toLowerCase() || "unknown";
+  return BIOME_KEY_ALIASES[key] || key;
 }
 
 function imageUrl(repoPath) {
@@ -72,7 +82,7 @@ async function loadZones() {
     .map((t) => ({
       id: String(t.id || ""),
       name: String(t.name || t.id || ""),
-      biome: String(t.biome || "unknown"),
+      biome: normalizeBiomeKey(t.biome),
       image: normalizePath(t.image || "")
     }))
     .filter((t) => t.id)
@@ -179,7 +189,8 @@ async function plannedAssets(all, zoneIds) {
 
 function runGenerator(opts) {
   return new Promise((resolve) => {
-    const args = [GENERATOR, "--style", opts.style];
+    const args = [GENERATOR];
+    if (opts.userExtraDescription) args.push("--extra-description", opts.userExtraDescription);
     if (opts.all) args.push("--all");
     else args.push("--zones", opts.zoneIds.join(","));
     if (opts.skipExisting) args.push("--skip-existing");
@@ -265,7 +276,7 @@ const server = http.createServer(async (req, res) => {
       }
 
       const body = await parseBody(req);
-      const style = String(body.style || "").trim();
+      const userExtraDescription = String(body.userExtraDescription || body.style || "").trim();
       const all = Boolean(body.all);
       const zoneIds = Array.isArray(body.zoneIds) ? body.zoneIds.map((v) => String(v)) : [];
       const model = String(body.model || "gpt-image-1").trim();
@@ -275,10 +286,6 @@ const server = http.createServer(async (req, res) => {
       const skipExisting = Boolean(body.skipExisting);
       const dryRun = Boolean(body.dryRun);
 
-      if (!style) {
-        sendJson(res, 400, { ok: false, error: "style is required" });
-        return;
-      }
       if (!all && zoneIds.length === 0) {
         sendJson(res, 400, { ok: false, error: "Provide zoneIds or set all=true" });
         return;
@@ -290,7 +297,7 @@ const server = http.createServer(async (req, res) => {
         const targets = await plannedAssets(all, zoneIds);
         const existed = new Map(await Promise.all(targets.map(async (p) => [p, await exists(path.resolve(ROOT, p))])));
         const result = await runGenerator({
-          style,
+          userExtraDescription,
           all,
           zoneIds,
           model,

@@ -9,16 +9,33 @@ const DEFAULT_MODEL = "gpt-image-1";
 const DEFAULT_SIZE = "1536x1024";
 const DEFAULT_QUALITY = "high";
 const API_URL = "https://api.openai.com/v1/images/generations";
+const GOOGLE_DRIVE_BACKUP_ROOT = String(
+  process.env.ZONECARD_BACKUP_ROOT
+  || "/Users/weaver/Library/CloudStorage/GoogleDrive-hubbabubba.awesome@gmail.com/My Drive/FLESHMOON/2.0/ZoneCards"
+).trim();
+const BIOME_KEY_ALIASES = {
+  civic: "residential",
+  labs: "research",
+  outskirts: "perimeter"
+};
+const DEFAULT_PROMPTS = {
+  sewers: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, grounded subterranean infrastructure aesthetic, damp concrete and aged metal materials, wet reflective surfaces, utilitarian construction, low industrial lighting tones, subtle humidity/mist in the air, moody but not fantastical, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens.",
+  industrial: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, heavy mechanical architecture, exposed steel structures, large-scale industrial forms, strong geometric silhouettes, cold industrial lighting with occasional warm mechanical glow, oil-stained worn surfaces, utilitarian machine-district design language, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens.",
+  transit: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, urban transit infrastructure aesthetic, concrete/steel/tile material language, linear civic engineering forms, grounded metropolitan atmosphere, practical city lighting, subtle dust in air, tense but not occult-decorated, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens.",
+  residential: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, lived-in urban residential/civic architecture, human-scale spaces, domestic materials (drywall, brick, worn tile, scuffed paint, carpet), practical interior lighting or soft window light, grounded atmosphere of abandonment, NO arcane symbols/occult motifs unless explicitly specified by the zone name/description, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens.",
+  research: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, sterile high-security research facility aesthetic, clean institutional materials (sealed panels, reinforced surfaces, glass when appropriate), controlled lighting in cool whites/blues with subtle red emergency accents, clinical and structured tone without decorative symbolism, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens.",
+  perimeter: "Painterly realism, cinematic environmental concept art for a tactical horror board game zone card, horizontal 7:12 tarot aspect ratio, outdoor fortified containment aesthetic, concrete barriers/fencing/asphalt/gravel material language, open spatial feel, cold floodlighting or harsh environmental lighting, wind/haze/dust in atmosphere, grounded military quarantine tone, no people, no characters, no text, no UI, no borders, no logos, no readable signage, no extreme fisheye lens."
+};
 
 function printHelp() {
   console.log(`
 Usage:
   node scripts/generate-zone-cards-openai.mjs [options]
 
-Required:
-  --style "<text>"         Common style prompt applied to every selected card
-  OR
-  --style-file <path>      File containing the common style prompt
+Prompting:
+  --extra-description "<text>"  Optional flavor text appended after each zone name
+  --style "<text>"              Backward-compatible alias of --extra-description
+  --style-file <path>           File-based alias of --extra-description
 
 Selection (pick at least one unless using --all):
   --zones <id,id,...>      Generate only specific zone tile IDs
@@ -40,14 +57,14 @@ Other:
 Examples:
   node scripts/generate-zone-cards-openai.mjs \\
     --zones PumpControl,OverflowJunction \\
-    --style "grimdark, wet concrete, practical lighting, painterly concept art"
+    --extra-description "storm runoff, emergency lights, recent evacuation"
 
   node scripts/generate-zone-cards-openai.mjs \\
-    --biomes labs,transit \\
-    --style-file scripts/style-prompts/base-style.txt \\
+    --biomes research,transit \\
+    --extra-description "failing power grid, tense atmosphere" \\
     --skip-existing
 
-  node scripts/generate-zone-cards-openai.mjs --all --style "retro-futurist horror realism"
+  node scripts/generate-zone-cards-openai.mjs --all --extra-description "late-stage containment collapse"
 `);
 }
 
@@ -57,6 +74,7 @@ function parseArgs(argv) {
     zonesFile: "",
     biomesCsv: "",
     all: false,
+    extraDescription: "",
     style: "",
     styleFile: "",
     zoneJson: DEFAULT_ZONE_JSON,
@@ -102,6 +120,9 @@ function parseArgs(argv) {
         break;
       case "--style":
         args.style = readValue();
+        break;
+      case "--extra-description":
+        args.extraDescription = readValue();
         break;
       case "--style-file":
         args.styleFile = readValue();
@@ -153,50 +174,77 @@ function parseCsvSet(value) {
   return out;
 }
 
+function normalizeBiomeKey(value) {
+  const key = String(value || "unknown").trim().toLowerCase() || "unknown";
+  return BIOME_KEY_ALIASES[key] || key;
+}
+
 function normalizeAssetPath(input) {
   return String(input || "").replaceAll("\\", "/").trim();
 }
 
+function escapeRegex(value) {
+  return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function safeZoneCardBaseName(tile) {
+  const source = String(tile?.id || tile?.name || "ZoneCard").trim();
+  return source
+    .replace(/[\\/:*?"<>|]/g, "")
+    .replace(/\s+/g, "_")
+    .replace(/^_+|_+$/g, "") || "ZoneCard";
+}
+
+async function backupExistingZoneCardVersion({ tile, outFile }) {
+  const biomeFolder = folderNameForBiome(tile?.biome);
+  const oldDir = path.join(GOOGLE_DRIVE_BACKUP_ROOT, biomeFolder, "old");
+  const ext = path.extname(outFile) || ".png";
+  const baseName = safeZoneCardBaseName(tile);
+
+  await fs.mkdir(oldDir, { recursive: true });
+
+  let maxVersion = 0;
+  const entries = await fs.readdir(oldDir, { withFileTypes: true });
+  const fileRegex = new RegExp(`^${escapeRegex(baseName)}_old_(\\d+)${escapeRegex(ext)}$`);
+  for (const entry of entries) {
+    if (!entry.isFile()) continue;
+    const match = entry.name.match(fileRegex);
+    if (!match) continue;
+    const version = Number.parseInt(match[1], 10);
+    if (Number.isFinite(version) && version > maxVersion) maxVersion = version;
+  }
+
+  const nextVersion = maxVersion + 1;
+  const backupFile = path.join(oldDir, `${baseName}_old_${nextVersion}${ext}`);
+  await fs.copyFile(outFile, backupFile);
+  return backupFile;
+}
+
 function folderNameForBiome(biome) {
-  switch (String(biome || "").toLowerCase()) {
+  switch (normalizeBiomeKey(biome)) {
     case "sewers":
       return "Sewers";
     case "industrial":
       return "Urban-Industrial";
     case "transit":
       return "Transit";
-    case "civic":
+    case "residential":
       return "Civic";
-    case "labs":
+    case "research":
       return "Labs";
-    case "outskirts":
+    case "perimeter":
       return "Outskirts";
     default:
       return "Misc";
   }
 }
 
-function buildTilePrompt(tile, stylePrompt) {
-  const tags = Array.isArray(tile.tags) ? tile.tags.join(", ") : "";
-  const hints = Array.isArray(tile.functionalRoleHints) ? tile.functionalRoleHints.join(", ") : "";
-  const intensity = tile.intensityLevel ?? "unknown";
-
-  return [
-    "Create a landscape environment illustration for a tactical horror board game zone card background.",
-    `GLOBAL STYLE (must be consistent across this batch): ${stylePrompt}`,
-    "Tile-specific direction:",
-    `- Name: ${tile.name || tile.id}`,
-    `- ID: ${tile.id}`,
-    `- Biome: ${tile.biome || "unknown"}`,
-    `- Tags: ${tags || "none"}`,
-    `- Role hints: ${hints || "none"}`,
-    `- Intensity: ${intensity}`,
-    "Constraints:",
-    "- No text, letters, numbers, logos, or watermarks.",
-    "- No card frame or UI overlay.",
-    "- Prioritize architecture/environment storytelling over character portraiture.",
-    "- Cinematic lighting and readable composition."
-  ].join("\n");
+function buildTilePrompt(tile, userExtraDescription) {
+  const biomeKey = normalizeBiomeKey(tile.biome);
+  const basePrompt = DEFAULT_PROMPTS[biomeKey] || DEFAULT_PROMPTS.industrial;
+  const zoneName = String(tile.name || tile.id || "Unknown Zone").trim();
+  const promptHint = String(tile.promptHint || "").trim();
+  return `${basePrompt}\n\nSpecific scene: ${zoneName}${promptHint ? ` — ${promptHint}` : ""}${userExtraDescription ? ` — ${userExtraDescription}` : ""}`;
 }
 
 async function readTextUtf8(filePath) {
@@ -305,12 +353,10 @@ async function main() {
     return;
   }
 
-  let stylePrompt = args.style.trim();
-  if (!stylePrompt && args.styleFile) {
-    stylePrompt = (await readTextUtf8(path.resolve(args.styleFile))).trim();
-  }
-  if (!stylePrompt) {
-    throw new Error("Provide --style or --style-file");
+  let userExtraDescription = args.extraDescription.trim();
+  if (!userExtraDescription) userExtraDescription = args.style.trim();
+  if (!userExtraDescription && args.styleFile) {
+    userExtraDescription = (await readTextUtf8(path.resolve(args.styleFile))).trim();
   }
 
   const explicitZoneIds = parseCsvSet(args.zonesCsv);
@@ -319,8 +365,9 @@ async function main() {
     for (const id of fileZoneIds) explicitZoneIds.add(id);
   }
   const biomeFilters = parseCsvSet(args.biomesCsv);
+  const normalizedBiomeFilters = new Set([...biomeFilters].map((biome) => normalizeBiomeKey(biome)));
 
-  if (!args.all && explicitZoneIds.size === 0 && biomeFilters.size === 0) {
+  if (!args.all && explicitZoneIds.size === 0 && normalizedBiomeFilters.size === 0) {
     throw new Error("Select scope with --zones, --zones-file, --biomes, or explicitly use --all");
   }
 
@@ -343,8 +390,8 @@ async function main() {
   if (explicitZoneIds.size > 0) {
     selected = selected.filter((tile) => explicitZoneIds.has(String(tile.id)));
   }
-  if (biomeFilters.size > 0) {
-    selected = selected.filter((tile) => biomeFilters.has(String(tile.biome)));
+  if (normalizedBiomeFilters.size > 0) {
+    selected = selected.filter((tile) => normalizedBiomeFilters.has(normalizeBiomeKey(tile.biome)));
   }
 
   if (selected.length === 0) {
@@ -400,8 +447,10 @@ async function main() {
     const { tile, outFile, assetPath } = generationPlan[i];
     process.stdout.write(`[${i + 1}/${generationPlan.length}] ${tile.id} ... `);
     try {
+      let existsAlready = false;
       try {
         await fs.access(outFile);
+        existsAlready = true;
         if (args.skipExisting) {
           skipped += 1;
           process.stdout.write("skipped (exists)\n");
@@ -411,7 +460,7 @@ async function main() {
         // File is missing, continue to generation.
       }
 
-      const prompt = buildTilePrompt(tile, stylePrompt);
+      const prompt = buildTilePrompt(tile, userExtraDescription);
       const imageBuffer = await requestImageBuffer({
         apiKey,
         model: args.model,
@@ -419,6 +468,11 @@ async function main() {
         size: args.size,
         quality: args.quality
       });
+
+      if (existsAlready) {
+        const backupFile = await backupExistingZoneCardVersion({ tile, outFile });
+        process.stdout.write(`backup -> ${normalizeAssetPath(backupFile)}\n`);
+      }
 
       await fs.mkdir(path.dirname(outFile), { recursive: true });
       await fs.writeFile(outFile, imageBuffer);
